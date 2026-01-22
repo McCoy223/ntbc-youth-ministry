@@ -1,34 +1,305 @@
-<h2>Youth Programs & Activities</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programs | NTBC Youth Ministry</title>
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-<p>
-  The NTBC Youth Ministry organizes spiritual and developmental programs aimed
-  at strengthening faith, building character, and encouraging fellowship among
-  the youth.
-</p>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Nunito+Sans:wght@600;700;800&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet">
 
-<h3>Regular Programs</h3>
-<ul>
-  <li>Youth Fellowship Services</li>
-  <li>Bible Studies and Teaching Sessions</li>
-  <li>Prayer Meetings</li>
-  <li>Leadership Training</li>
-</ul>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
 
-<h3>Special Programs</h3>
-<ul>
-  <li>Youth Seminars and Workshops</li>
-  <li>Evangelism and Outreach Programs</li>
-  <li>Youth Conferences and Camps</li>
-  <li>Community Service and Welfare Activities</li>
-</ul>
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563EB',
+            secondary: '#059669',
+            accent: '#DC2626',
+            background: '#FAFBFC',
+            foreground: '#1F2937'
+          },
+          fontFamily: {
+            heading: ['Nunito Sans', 'sans-serif'],
+            body: ['Source Sans 3', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 dark:bg-slate-800 font-body">
 
-<h3>Purpose of Our Programs</h3>
-<p>
-  All our programs are designed to help young people grow spiritually, develop
-  godly character, and live out their faith boldly.
-</p>
+<header class="bg-gradient-to-r from-primary to-secondary text-white">
+  <div class="max-w-7xl mx-auto flex items-center gap-4 p-6">
+    <img src="images/ntbc-logo.png" class="w-16" alt="NTBC Logo">
 
-<blockquote>
-  “That the man of God may be perfect, throughly furnished unto all good works.”  
-  <br>— 2 Timothy 3:17
-</blockquote>
+    <div>
+      <h1 class="font-heading text-2xl font-extrabold">
+        New Testament Baptist Church
+      </h1>
+      <p class="text-sm opacity-90">
+        Youth Ministry – Afrancho-Bronkong
+      </p>
+    </div>
+
+    <!-- Dark Mode Button -->
+    <button onclick="toggleDark()"
+      class="ml-auto bg-white/20 px-4 py-2 rounded-full text-sm font-semibold hover:bg-white/30 transition-colors">
+      🌙
+    </button>
+  </div>
+
+  <nav class="bg-black/20">
+    <div class="max-w-7xl mx-auto flex flex-wrap gap-6 px-6 py-3 font-semibold">
+      <a href="index.html" class="hover:text-white/80 transition-colors">Home</a>
+      <a href="about.html" class="hover:text-white/80 transition-colors">About</a>
+      <a href="programs.html" class="underline decoration-2 underline-offset-4 hover:text-white/80 transition-colors">Programs</a>
+      <a href="leadership.html" class="hover:text-white/80 transition-colors">Leadership</a>
+      <a href="finance.html" class="hover:text-white/80 transition-colors">Finance</a>
+      <a href="events.html" class="hover:text-white/80 transition-colors">Events</a>
+      <a href="contact.html" class="hover:text-white/80 transition-colors">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main class="max-w-7xl mx-auto bg-white dark:bg-slate-900 dark:text-slate-200 -mt-6 rounded-xl shadow-xl p-8">
+  <h1 class="font-heading text-4xl font-bold text-primary mb-2">Youth Programs & Activities</h1>
+  <p class="text-lg text-gray-600 dark:text-slate-400 mb-8">
+    Nurturing Faith, Building Character, Encouraging Fellowship
+  </p>
+
+  <div class="mb-12">
+    <div class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-2xl mb-8">
+      <p class="text-lg">
+        The NTBC Youth Ministry organizes spiritual and developmental programs aimed
+        at strengthening faith, building character, and encouraging fellowship among
+        the youth.
+      </p>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-8 mb-12">
+    <!-- Regular Programs -->
+    <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-8 rounded-xl shadow-sm">
+      <div class="flex items-center mb-6">
+        <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mr-4">
+          <span class="text-2xl">📅</span>
+        </div>
+        <h2 class="font-heading text-2xl font-bold text-primary">Regular Programs</h2>
+      </div>
+      <ul class="space-y-4">
+        <li class="flex items-center p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+          <span class="w-3 h-3 bg-primary rounded-full mr-4"></span>
+          <div>
+            <p class="font-semibold">Youth Fellowship Services</p>
+            <p class="text-sm text-gray-600 dark:text-slate-400">Weekly gatherings for worship and teaching</p>
+          </div>
+        </li>
+        <li class="flex items-center p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+          <span class="w-3 h-3 bg-primary rounded-full mr-4"></span>
+          <div>
+            <p class="font-semibold">Bible Studies and Teaching Sessions</p>
+            <p class="text-sm text-gray-600 dark:text-slate-400">In-depth study of God's Word</p>
+          </div>
+        </li>
+        <li class="flex items-center p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+          <span class="w-3 h-3 bg-primary rounded-full mr-4"></span>
+          <div>
+            <p class="font-semibold">Prayer Meetings</p>
+            <p class="text-sm text-gray-600 dark:text-slate-400">Corporate and personal prayer sessions</p>
+          </div>
+        </li>
+        <li class="flex items-center p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+          <span class="w-3 h-3 bg-primary rounded-full mr-4"></span>
+          <div>
+            <p class="font-semibold">Leadership Training</p>
+            <p class="text-sm text-gray-600 dark:text-slate-400">Developing next-generation leaders</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Special Programs -->
+    <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-8 rounded-xl shadow-sm">
+      <div class="flex items-center mb-6">
+        <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mr-4">
+          <span class="text-2xl">🌟</span>
+        </div>
+        <h2 class="font-heading text-2xl font-bold text-purple-600 dark:text-purple-400">Special Programs</h2>
+      </div>
+      <ul class="space-y-4">
+        <li class="flex items-center p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+          <span class="w-3 h-3 bg-purple-500 rounded-full mr-4"></span>
+          <div>
+            <p class="font-semibold">Youth Seminars and Workshops</p>
+            <p class="text-sm text-gray-600 dark:text-slate-400">Skill-building and spiritual development</p>
+          </div>
+        </li>
+        <li class="flex items-center p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+          <span class="w-3 h-3 bg-purple-500 rounded-full mr-4"></span>
+          <div>
+            <p class="font-semibold">Evangelism and Outreach Programs</p>
+            <p class="text-sm text-gray-600 dark:text-slate-400">Sharing the Gospel in our community</p>
+          </div>
+        </li>
+        <li class="flex items-center p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+          <span class="w-3 h-3 bg-purple-500 rounded-full mr-4"></span>
+          <div>
+            <p class="font-semibold">Youth Conferences and Camps</p>
+            <p class="text-sm text-gray-600 dark:text-slate-400">Retreats for spiritual refreshment</p>
+          </div>
+        </li>
+        <li class="flex items-center p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+          <span class="w-3 h-3 bg-purple-500 rounded-full mr-4"></span>
+          <div>
+            <p class="font-semibold">Community Service and Welfare Activities</p>
+            <p class="text-sm text-gray-600 dark:text-slate-400">Serving others in practical ways</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Purpose Section -->
+  <div class="bg-gradient-to-r from-green-50 to-blue-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-2xl mb-12">
+    <h2 class="font-heading text-2xl font-bold text-secondary mb-6">Purpose of Our Programs</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div>
+        <p class="text-lg mb-6">
+          All our programs are designed to help young people grow spiritually, develop
+          godly character, and live out their faith boldly in their generation.
+        </p>
+        <blockquote class="border-l-4 border-secondary pl-6 italic text-lg py-2">
+          "That the man of God may be perfect, throughly furnished unto all good works."  
+          <br><span class="text-sm not-italic mt-2 block">— 2 Timothy 3:17</span>
+        </blockquote>
+      </div>
+      <div class="bg-white dark:bg-slate-800 p-6 rounded-xl">
+        <h3 class="font-bold text-lg mb-4">Program Goals</h3>
+        <ul class="space-y-3">
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-secondary rounded-full mr-3"></span>
+            Deepen relationship with Christ
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-secondary rounded-full mr-3"></span>
+            Build biblical knowledge and wisdom
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-secondary rounded-full mr-3"></span>
+            Foster Christian fellowship
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-secondary rounded-full mr-3"></span>
+            Equip for service and leadership
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Program Schedule -->
+  <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-8 rounded-xl">
+    <h2 class="font-heading text-2xl font-bold text-primary mb-6">Weekly Schedule</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full">
+        <thead class="bg-gray-100 dark:bg-slate-700">
+          <tr>
+            <th class="p-3 text-left">Day</th>
+            <th class="p-3 text-left">Program</th>
+            <th class="p-3 text-left">Time</th>
+            <th class="p-3 text-left">Venue</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200 dark:divide-slate-700">
+          <tr class="hover:bg-gray-50 dark:hover:bg-slate-700">
+            <td class="p-3 font-medium">Sunday</td>
+            <td class="p-3">Youth Fellowship</td>
+            <td class="p-3">3:00 PM</td>
+            <td class="p-3">Church Auditorium</td>
+          </tr>
+          <tr class="hover:bg-gray-50 dark:hover:bg-slate-700">
+            <td class="p-3 font-medium">Wednesday</td>
+            <td class="p-3">Bible Study</td>
+            <td class="p-3">5:00 PM</td>
+            <td class="p-3">Youth Chapel</td>
+          </tr>
+          <tr class="hover:bg-gray-50 dark:hover:bg-slate-700">
+            <td class="p-3 font-medium">Friday</td>
+            <td class="p-3">Prayer Meeting</td>
+            <td class="p-3">6:00 PM</td>
+            <td class="p-3">Prayer Room</td>
+          </tr>
+          <tr class="hover:bg-gray-50 dark:hover:bg-slate-700">
+            <td class="p-3 font-medium">Saturday</td>
+            <td class="p-3">Leadership Training</td>
+            <td class="p-3">10:00 AM</td>
+            <td class="p-3">Conference Room</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+<footer class="mt-16 bg-secondary text-white text-center p-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <h4 class="font-heading text-lg font-bold mb-4">Program Information</h4>
+        <p class="text-sm text-white/90">
+          For more details about specific programs, contact the Youth Secretary or check weekly announcements.
+        </p>
+      </div>
+      <div>
+        <h4 class="font-heading text-lg font-bold mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="events.html" class="hover:text-white/80 transition-colors">Upcoming Events</a></li>
+          <li><a href="leadership.html" class="hover:text-white/80 transition-colors">Program Leaders</a></li>
+          <li><a href="contact.html" class="hover:text-white/80 transition-colors">Get Involved</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-heading text-lg font-bold mb-4">Participation</h4>
+        <p class="text-sm text-white/90">
+          All youth members are encouraged to actively participate in our programs for spiritual growth and development.
+        </p>
+      </div>
+    </div>
+    
+    <div class="border-t border-white/30 pt-6">
+      <p class="text-lg font-semibold">&copy; 2026 New Testament Baptist Church (NTBC) Youth Ministry</p>
+      <p class="text-sm mt-2 text-white/80">Built on Christ • Growing in Faith • Serving in Love</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Dark Mode Toggle Script -->
+<script>
+  function toggleDark() {
+    document.documentElement.classList.toggle('dark');
+    const button = document.querySelector('button[onclick="toggleDark()"]');
+    if (document.documentElement.classList.contains('dark')) {
+      button.innerHTML = '☀️';
+      button.classList.remove('bg-white/20');
+      button.classList.add('bg-gray-700');
+    } else {
+      button.innerHTML = '🌙';
+      button.classList.remove('bg-gray-700');
+      button.classList.add('bg-white/20');
+    }
+  }
+</script>
+
+</body>
+</html>
