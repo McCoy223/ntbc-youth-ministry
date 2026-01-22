@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #0b3c8c; /* NTBC Blue */
+  color: #ffffff;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  gap: 15px;
+}
+
+.logo {
+  width: 70px;
+  height: auto;
+}
+
+nav {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+nav a {
+  color: #0b3c8c;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #c00000; /* NTBC Red */
+}
+
+.container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.theme {
+  background-color: #e6f0ff;
+  padding: 10px;
+  border-left: 5px solid #0b3c8c;
+  margin: 15px 0;
+}
+
+ul {
+  margin-left: 20px;
+}
+
+blockquote {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f4f4f4;
+  border-left: 5px solid #008000; /* NTBC Green */
+  font-style: italic;
+}
+
+footer {
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  margin-top: 40px;
+}
