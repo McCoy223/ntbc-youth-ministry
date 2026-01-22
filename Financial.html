@@ -4,7 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Finance | NTBC Youth Ministry</title>
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Nunito+Sans:wght@600;700;800&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
+
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563EB',
+            secondary: '#059669',
+            accent: '#DC2626',
+            background: '#FAFBFC',
+            foreground: '#1F2937'
+          },
+          fontFamily: {
+            heading: ['Nunito Sans', 'sans-serif'],
+            body: ['Source Sans 3', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
 </head>
 <body>
 
@@ -51,7 +82,7 @@
   </ul>
 
   <blockquote>
-    “Moreover it is required in stewards, that a man be found faithful.”  
+    "Moreover it is required in stewards, that a man be found faithful."  
     <br>— 1 Corinthians 4:2
   </blockquote>
 </main>
