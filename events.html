@@ -1,32 +1,341 @@
-<h2>Youth Events & Announcements</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events | NTBC Youth Ministry</title>
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-<p>
-  This page provides information on upcoming youth meetings, programs, and
-  special events organized by the NTBC Youth Ministry.
-</p>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Nunito+Sans:wght@600;700;800&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet">
 
-<h3>Regular Meetings</h3>
-<ul>
-  <li>Weekly Youth Fellowship</li>
-  <li>Weekly Bible Study</li>
-  <li>Prayer Meetings</li>
-</ul>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
 
-<h3>Upcoming Programs</h3>
-<ul>
-  <li>Youth Revival Programs</li>
-  <li>Youth Seminars and Workshops</li>
-  <li>Evangelism and Outreach Programs</li>
-  <li>Youth Conferences and Camps</li>
-</ul>
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563EB',
+            secondary: '#059669',
+            accent: '#DC2626',
+            background: '#FAFBFC',
+            foreground: '#1F2937'
+          },
+          fontFamily: {
+            heading: ['Nunito Sans', 'sans-serif'],
+            body: ['Source Sans 3', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 dark:bg-slate-800 font-body">
 
-<h3>Event Updates</h3>
-<p>
-  Details such as dates, venues, and program schedules will be updated regularly.
-  Members are encouraged to check this page frequently for announcements.
-</p>
+<header class="bg-gradient-to-r from-primary to-secondary text-white">
+  <div class="max-w-7xl mx-auto flex items-center gap-4 p-6">
+    <img src="images/ntbc-logo.png" class="w-16" alt="NTBC Logo">
 
-<blockquote>
-  “Let all things be done decently and in order.”  
-  <br>— 1 Corinthians 14:40
-</blockquote>
+    <div>
+      <h1 class="font-heading text-2xl font-extrabold">
+        New Testament Baptist Church
+      </h1>
+      <p class="text-sm opacity-90">
+        Youth Ministry – Afrancho-Bronkong
+      </p>
+    </div>
+
+    <!-- Dark Mode Button -->
+    <button onclick="toggleDark()"
+      class="ml-auto bg-white/20 px-4 py-2 rounded-full text-sm font-semibold hover:bg-white/30 transition-colors">
+      🌙
+    </button>
+  </div>
+
+  <nav class="bg-black/20">
+    <div class="max-w-7xl mx-auto flex flex-wrap gap-6 px-6 py-3 font-semibold">
+      <a href="index.html" class="hover:text-white/80 transition-colors">Home</a>
+      <a href="about.html" class="hover:text-white/80 transition-colors">About</a>
+      <a href="programs.html" class="hover:text-white/80 transition-colors">Programs</a>
+      <a href="leadership.html" class="hover:text-white/80 transition-colors">Leadership</a>
+      <a href="finance.html" class="hover:text-white/80 transition-colors">Finance</a>
+      <a href="events.html" class="underline decoration-2 underline-offset-4 hover:text-white/80 transition-colors">Events</a>
+      <a href="contact.html" class="hover:text-white/80 transition-colors">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main class="max-w-7xl mx-auto bg-white dark:bg-slate-900 dark:text-slate-200 -mt-6 rounded-xl shadow-xl p-8">
+  <h1 class="font-heading text-4xl font-bold text-primary mb-2">Youth Events & Announcements</h1>
+  <p class="text-lg text-gray-600 dark:text-slate-400 mb-8">
+    Stay Updated with Our Ministry Activities
+  </p>
+
+  <div class="mb-12">
+    <div class="bg-gradient-to-br from-blue-50 to-orange-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-2xl">
+      <p class="text-lg">
+        This page provides information on upcoming youth meetings, programs, and
+        special events organized by the NTBC Youth Ministry. Check regularly for updates!
+      </p>
+    </div>
+  </div>
+
+  <!-- Upcoming Events -->
+  <div class="mb-12">
+    <h2 class="font-heading text-3xl font-bold text-primary mb-8 text-center">Upcoming Events</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Event 1 -->
+      <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+        <div class="bg-primary text-white p-4">
+          <div class="text-center">
+            <p class="text-2xl font-bold">MAR</p>
+            <p class="text-3xl font-extrabold">15</p>
+            <p class="text-sm">2025</p>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="font-bold text-xl mb-2">Youth Revival Night</h3>
+          <p class="text-gray-600 dark:text-slate-400 text-sm mb-4">An evening of worship, prayer, and spiritual renewal.</p>
+          <div class="space-y-2 text-sm">
+            <div class="flex items-center">
+              <span class="mr-2">⏰</span>
+              <span>6:00 PM - 9:00 PM</span>
+            </div>
+            <div class="flex items-center">
+              <span class="mr-2">📍</span>
+              <span>Church Auditorium</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event 2 -->
+      <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+        <div class="bg-secondary text-white p-4">
+          <div class="text-center">
+            <p class="text-2xl font-bold">APR</p>
+            <p class="text-3xl font-extrabold">05</p>
+            <p class="text-sm">2025</p>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="font-bold text-xl mb-2">Leadership Workshop</h3>
+          <p class="text-gray-600 dark:text-slate-400 text-sm mb-4">Training session for current and aspiring youth leaders.</p>
+          <div class="space-y-2 text-sm">
+            <div class="flex items-center">
+              <span class="mr-2">⏰</span>
+              <span>10:00 AM - 2:00 PM</span>
+            </div>
+            <div class="flex items-center">
+              <span class="mr-2">📍</span>
+              <span>Conference Room</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event 3 -->
+      <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+        <div class="bg-accent text-white p-4">
+          <div class="text-center">
+            <p class="text-2xl font-bold">APR</p>
+            <p class="text-3xl font-extrabold">20</p>
+            <p class="text-sm">2025</p>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="font-bold text-xl mb-2">Community Outreach</h3>
+          <p class="text-gray-600 dark:text-slate-400 text-sm mb-4">Evangelism and service project in our community.</p>
+          <div class="space-y-2 text-sm">
+            <div class="flex items-center">
+              <span class="mr-2">⏰</span>
+              <span>8:00 AM - 12:00 PM</span>
+            </div>
+            <div class="flex items-center">
+              <span class="mr-2">📍</span>
+              <span>Meet at Church</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-8 mb-12">
+    <!-- Regular Meetings -->
+    <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-8 rounded-xl shadow-sm">
+      <div class="flex items-center mb-6">
+        <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mr-4">
+          <span class="text-2xl">📅</span>
+        </div>
+        <h2 class="font-heading text-2xl font-bold text-primary">Regular Meetings</h2>
+      </div>
+      <ul class="space-y-4">
+        <li class="flex items-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+          <div class="w-10 h-10 bg-primary text-white rounded-lg flex items-center justify-center mr-4">
+            <span class="font-bold">SUN</span>
+          </div>
+          <div>
+            <p class="font-semibold">Weekly Youth Fellowship</p>
+            <p class="text-sm text-gray-600 dark:text-slate-400">Every Sunday, 3:00 PM | Church Auditorium</p>
+          </div>
+        </li>
+        <li class="flex items-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+          <div class="w-10 h-10 bg-primary text-white rounded-lg flex items-center justify-center mr-4">
+            <span class="font-bold">WED</span>
+          </div>
+          <div>
+            <p class="font-semibold">Weekly Bible Study</p>
+            <p class="text-sm text-gray-600 dark:text-slate-400">Every Wednesday, 5:00 PM | Youth Chapel</p>
+          </div>
+        </li>
+        <li class="flex items-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+          <div class="w-10 h-10 bg-primary text-white rounded-lg flex items-center justify-center mr-4">
+            <span class="font-bold">FRI</span>
+          </div>
+          <div>
+            <p class="font-semibold">Prayer Meetings</p>
+            <p class="text-sm text-gray-600 dark:text-slate-400">Every Friday, 6:00 PM | Prayer Room</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Upcoming Programs -->
+    <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-8 rounded-xl shadow-sm">
+      <div class="flex items-center mb-6">
+        <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mr-4">
+          <span class="text-2xl">📢</span>
+        </div>
+        <h2 class="font-heading text-2xl font-bold text-secondary">Upcoming Programs</h2>
+      </div>
+      <ul class="space-y-4">
+        <li class="flex items-start p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+          <span class="w-3 h-3 bg-secondary rounded-full mr-4 mt-2"></span>
+          <div>
+            <p class="font-semibold">Youth Revival Programs</p>
+            <p class="text-sm text-gray-600 dark:text-slate-400">Quarterly spiritual renewal gatherings</p>
+          </div>
+        </li>
+        <li class="flex items-start p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+          <span class="w-3 h-3 bg-secondary rounded-full mr-4 mt-2"></span>
+          <div>
+            <p class="font-semibold">Youth Seminars and Workshops</p>
+            <p class="text-sm text-gray-600 dark:text-slate-400">Skill development and spiritual growth sessions</p>
+          </div>
+        </li>
+        <li class="flex items-start p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+          <span class="w-3 h-3 bg-secondary rounded-full mr-4 mt-2"></span>
+          <div>
+            <p class="font-semibold">Evangelism and Outreach Programs</p>
+            <p class="text-sm text-gray-600 dark:text-slate-400">Community engagement activities</p>
+          </div>
+        </li>
+        <li class="flex items-start p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
+          <span class="w-3 h-3 bg-secondary rounded-full mr-4 mt-2"></span>
+          <div>
+            <p class="font-semibold">Youth Conferences and Camps</p>
+            <p class="text-sm text-gray-600 dark:text-slate-400">Annual retreats and conferences</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Event Updates -->
+  <div class="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-2xl mb-12">
+    <div class="flex items-center mb-6">
+      <div class="w-12 h-12 bg-amber-100 dark:bg-amber-900 rounded-lg flex items-center justify-center mr-4">
+        <span class="text-2xl">🔔</span>
+      </div>
+      <div>
+        <h2 class="font-heading text-2xl font-bold text-amber-600 dark:text-amber-400">Event Updates</h2>
+        <p class="text-gray-600 dark:text-slate-400">Stay informed about the latest announcements</p>
+      </div>
+    </div>
+    
+    <div class="bg-white dark:bg-slate-800 p-6 rounded-xl">
+      <p class="mb-6">
+        Details such as dates, venues, and program schedules will be updated regularly.
+        Members are encouraged to check this page frequently for announcements.
+      </p>
+      
+      <div class="flex items-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+        <span class="text-2xl mr-4">💡</span>
+        <div>
+          <p class="font-semibold">How to Stay Updated</p>
+          <p class="text-sm text-gray-600 dark:text-slate-400 mt-1">
+            • Check this page weekly • Listen to Sunday announcements • Follow our WhatsApp group • Contact leaders
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripture Quote -->
+  <div class="text-center">
+    <blockquote class="border-l-4 border-primary pl-6 italic text-xl py-2 inline-block text-left">
+      "Let all things be done decently and in order."  
+      <br><span class="text-base not-italic mt-2 block font-semibold">— 1 Corinthians 14:40</span>
+    </blockquote>
+  </div>
+</main>
+
+<footer class="mt-16 bg-secondary text-white text-center p-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <h4 class="font-heading text-lg font-bold mb-4">Event Registration</h4>
+        <p class="text-sm text-white/90">
+          For special events requiring registration, please contact the Organizing Secretary.
+        </p>
+      </div>
+      <div>
+        <h4 class="font-heading text-lg font-bold mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="programs.html" class="hover:text-white/80 transition-colors">Programs</a></li>
+          <li><a href="leadership.html" class="hover:text-white/80 transition-colors">Event Organizers</a></li>
+          <li><a href="contact.html" class="hover:text-white/80 transition-colors">Contact for Info</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-heading text-lg font-bold mb-4">Participation</h4>
+        <p class="text-sm text-white/90">
+          All youth are encouraged to actively participate in our events for fellowship and growth.
+        </p>
+      </div>
+    </div>
+    
+    <div class="border-t border-white/30 pt-6">
+      <p class="text-lg font-semibold">&copy; 2026 New Testament Baptist Church (NTBC) Youth Ministry</p>
+      <p class="text-sm mt-2 text-white/80">Fellowship • Growth • Service • Celebration</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Dark Mode Toggle Script -->
+<script>
+  function toggleDark() {
+    document.documentElement.classList.toggle('dark');
+    const button = document.querySelector('button[onclick="toggleDark()"]');
+    if (document.documentElement.classList.contains('dark')) {
+      button.innerHTML = '☀️';
+      button.classList.remove('bg-white/20');
+      button.classList.add('bg-gray-700');
+    } else {
+      button.innerHTML = '🌙';
+      button.classList.remove('bg-gray-700');
+      button.classList.add('bg-white/20');
+    }
+  }
+</script>
+
+</body>
+</html>
