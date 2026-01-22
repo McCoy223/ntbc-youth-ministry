@@ -5,18 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NTBC Youth Ministry</title>
 
-  <!-- Tailwind CDN (Compiled) -->
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Fonts (same as your tailwind.css) -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Nunito+Sans:wght@600;700;800&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- Your custom reset -->
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/index.css">
 
   <!-- Tailwind Theme Config -->
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
@@ -37,7 +38,7 @@
   </script>
 </head>
 
-<body class="bg-background text-foreground font-body">
+<body class="bg-gray-50 dark:bg-slate-800 font-body">
 
   <!-- HEADER -->
   <header class="bg-gradient-to-r from-primary to-secondary text-white">
@@ -51,83 +52,240 @@
           Youth Ministry – Afrancho-Bronkong
         </p>
       </div>
+
+      <!-- Dark Mode Button -->
+      <button onclick="toggleDark()"
+        class="ml-auto bg-white/20 px-4 py-2 rounded-full text-sm font-semibold hover:bg-white/30 transition-colors">
+        🌙
+      </button>
     </div>
 
     <!-- NAV -->
     <nav class="bg-black/20">
       <div class="max-w-7xl mx-auto flex flex-wrap gap-6 px-6 py-3 font-semibold">
-        <a href="index.html" class="hover:text-accent">Home</a>
-        <a href="about.html" class="hover:text-accent">About</a>
-        <a href="programs.html" class="hover:text-accent">Programs</a>
-        <a href="leadership.html" class="hover:text-accent">Leadership</a>
-        <a href="finance.html" class="hover:text-accent">Finance</a>
-        <a href="events.html" class="hover:text-accent">Events</a>
-        <a href="contact.html" class="hover:text-accent">Contact</a>
+        <a href="index.html" class="underline decoration-2 underline-offset-4 hover:text-white/80 transition-colors">Home</a>
+        <a href="about.html" class="hover:text-white/80 transition-colors">About</a>
+        <a href="programs.html" class="hover:text-white/80 transition-colors">Programs</a>
+        <a href="leadership.html" class="hover:text-white/80 transition-colors">Leadership</a>
+        <a href="finance.html" class="hover:text-white/80 transition-colors">Finance</a>
+        <a href="events.html" class="hover:text-white/80 transition-colors">Events</a>
+        <a href="contact.html" class="hover:text-white/80 transition-colors">Contact</a>
       </div>
     </nav>
   </header>
 
   <!-- MAIN -->
-  <main class="max-w-7xl mx-auto bg-white -mt-6 rounded-xl shadow-xl p-8">
+  <main class="max-w-7xl mx-auto bg-white dark:bg-slate-900 dark:text-slate-200 -mt-6 rounded-xl shadow-xl p-8">
 
     <!-- HERO -->
-    <section class="bg-gray-50 rounded-xl p-8 mb-10">
-      <h2 class="font-heading text-3xl font-bold text-primary mb-4">
-        Welcome to NTBC Youth Ministry
-      </h2>
-      <p class="max-w-3xl">
-        We are committed to raising young people who are firmly built on Christ
-        and shining as lights in their generation.
-      </p>
+    <section class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-slate-800 dark:to-slate-900 rounded-xl p-8 mb-12">
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="md:w-2/3">
+          <h1 class="font-heading text-4xl font-bold text-primary mb-4">
+            Welcome to NTBC Youth Ministry
+          </h1>
+          <p class="text-lg mb-6">
+            We are committed to raising young people who are firmly built on Christ
+            and shining as lights in their generation.
+          </p>
 
-      <p class="mt-4 font-semibold">
-        Theme: <span class="text-secondary">Built to Shine</span><br>
-        <em class="text-sm">
-          “But ye are a chosen generation…” – 1 Peter 2:9
-        </em>
-      </p>
+          <div class="bg-white dark:bg-slate-800 inline-block px-6 py-4 rounded-lg shadow-sm mb-6">
+            <p class="font-bold text-lg">
+              Theme: <span class="text-secondary">Built to Shine</span>
+            </p>
+            <p class="text-sm italic text-gray-600 dark:text-slate-400 mt-1">
+              "But ye are a chosen generation, a royal priesthood, a holy nation, a peculiar people..." 
+              <br><span class="not-italic font-semibold">— 1 Peter 2:9</span>
+            </p>
+          </div>
 
-      <a href="contact.html"
-         class="inline-block mt-6 bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition">
-        Join the Youth Ministry
-      </a>
+          <div class="flex flex-wrap gap-4 mt-6">
+            <a href="contact.html"
+               class="inline-block bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors">
+              Join the Youth Ministry
+            </a>
+            <a href="programs.html"
+               class="inline-block border-2 border-primary text-primary dark:text-blue-300 px-8 py-3 rounded-full font-semibold hover:bg-primary hover:text-white transition-colors">
+              Explore Programs
+            </a>
+          </div>
+        </div>
+        
+        <div class="md:w-1/3">
+          <div class="bg-gradient-to-br from-primary to-secondary p-1 rounded-xl">
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-lg text-center">
+              <div class="text-5xl mb-4">🌟</div>
+              <h3 class="font-bold text-xl mb-2">Youth Fellowship</h3>
+              <p class="text-sm text-gray-600 dark:text-slate-400">Sundays, 3:00 PM</p>
+              <p class="text-sm text-gray-600 dark:text-slate-400">All are welcome!</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- CARDS -->
-    <section>
-      <h3 class="font-heading text-2xl font-bold mb-6 text-primary">
-        Our Focus
-      </h3>
+    <!-- OUR FOCUS -->
+    <section class="mb-12">
+      <div class="text-center mb-10">
+        <h2 class="font-heading text-3xl font-bold text-primary mb-4">
+          Our Focus
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-slate-400 max-w-3xl mx-auto">
+          We focus on key areas that help young people grow spiritually and develop godly character.
+        </p>
+      </div>
 
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        <div class="bg-gray-100 p-6 rounded-xl shadow hover:-translate-y-1 transition">
-          <h4 class="font-bold text-secondary mb-2">Biblical Teaching</h4>
-          <p>Sound doctrine for strong Christian growth.</p>
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-lg hover:-translate-y-1 transition-all border border-gray-200 dark:border-slate-700">
+          <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-2xl">📖</span>
+          </div>
+          <h4 class="font-bold text-lg text-primary mb-2">Biblical Teaching</h4>
+          <p class="text-gray-600 dark:text-slate-400">Sound doctrine and deep understanding of God's Word for strong Christian growth.</p>
         </div>
 
-        <div class="bg-gray-100 p-6 rounded-xl shadow hover:-translate-y-1 transition">
-          <h4 class="font-bold text-secondary mb-2">Spiritual Growth</h4>
-          <p>Prayer, devotion, and Christ-like living.</p>
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-lg hover:-translate-y-1 transition-all border border-gray-200 dark:border-slate-700">
+          <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-2xl">🌱</span>
+          </div>
+          <h4 class="font-bold text-lg text-secondary mb-2">Spiritual Growth</h4>
+          <p class="text-gray-600 dark:text-slate-400">Prayer, devotion, discipleship, and Christ-like character development.</p>
         </div>
 
-        <div class="bg-gray-100 p-6 rounded-xl shadow hover:-translate-y-1 transition">
-          <h4 class="font-bold text-secondary mb-2">Youth Fellowship</h4>
-          <p>Unity, love, and strong relationships.</p>
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-lg hover:-translate-y-1 transition-all border border-gray-200 dark:border-slate-700">
+          <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-2xl">🤝</span>
+          </div>
+          <h4 class="font-bold text-lg text-purple-600 dark:text-purple-400 mb-2">Youth Fellowship</h4>
+          <p class="text-gray-600 dark:text-slate-400">Unity, love, strong relationships, and supportive Christian community.</p>
         </div>
 
-        <div class="bg-gray-100 p-6 rounded-xl shadow hover:-translate-y-1 transition">
-          <h4 class="font-bold text-secondary mb-2">Leadership</h4>
-          <p>Training tomorrow’s Christian leaders.</p>
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md hover:shadow-lg hover:-translate-y-1 transition-all border border-gray-200 dark:border-slate-700">
+          <div class="w-12 h-12 bg-amber-100 dark:bg-amber-900 rounded-lg flex items-center justify-center mb-4">
+            <span class="text-2xl">👑</span>
+          </div>
+          <h4 class="font-bold text-lg text-amber-600 dark:text-amber-400 mb-2">Leadership</h4>
+          <p class="text-gray-600 dark:text-slate-400">Training and equipping tomorrow's Christian leaders for service.</p>
         </div>
+      </div>
+    </section>
+
+    <!-- ADDITIONAL SECTIONS -->
+    <div class="grid lg:grid-cols-2 gap-8 mb-12">
+      <!-- Scripture Spotlight -->
+      <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-2xl">
+        <div class="flex items-center mb-6">
+          <div class="w-12 h-12 bg-primary/10 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mr-4">
+            <span class="text-2xl">✨</span>
+          </div>
+          <h3 class="font-heading text-2xl font-bold text-primary">Scripture Spotlight</h3>
+        </div>
+        <blockquote class="border-l-4 border-primary pl-6 italic text-xl py-2">
+          "Let no man despise thy youth; but be thou an example of the believers, in word, in conversation, in charity, in spirit, in faith, in purity."
+        </blockquote>
+        <p class="text-right mt-4 font-semibold">— 1 Timothy 4:12</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="bg-gradient-to-br from-green-50 to-teal-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-2xl">
+        <div class="flex items-center mb-6">
+          <div class="w-12 h-12 bg-secondary/10 dark:bg-green-900/30 rounded-lg flex items-center justify-center mr-4">
+            <span class="text-2xl">🚀</span>
+          </div>
+          <h3 class="font-heading text-2xl font-bold text-secondary">Quick Access</h3>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <a href="programs.html" class="bg-white dark:bg-slate-800 p-4 rounded-lg hover:shadow-lg transition-shadow block">
+            <h4 class="font-bold text-primary mb-2">Programs</h4>
+            <p class="text-sm text-gray-600 dark:text-slate-400">Our weekly activities</p>
+          </a>
+          <a href="events.html" class="bg-white dark:bg-slate-800 p-4 rounded-lg hover:shadow-lg transition-shadow block">
+            <h4 class="font-bold text-primary mb-2">Events</h4>
+            <p class="text-sm text-gray-600 dark:text-slate-400">Upcoming gatherings</p>
+          </a>
+          <a href="leadership.html" class="bg-white dark:bg-slate-800 p-4 rounded-lg hover:shadow-lg transition-shadow block">
+            <h4 class="font-bold text-primary mb-2">Leadership</h4>
+            <p class="text-sm text-gray-600 dark:text-slate-400">Meet our team</p>
+          </a>
+          <a href="contact.html" class="bg-white dark:bg-slate-800 p-4 rounded-lg hover:shadow-lg transition-shadow block">
+            <h4 class="font-bold text-primary mb-2">Contact</h4>
+            <p class="text-sm text-gray-600 dark:text-slate-400">Get in touch</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <section class="bg-gradient-to-r from-primary to-blue-600 text-white p-8 rounded-2xl text-center">
+      <h2 class="font-heading text-3xl font-bold mb-4">Ready to Shine for Christ?</h2>
+      <p class="text-lg mb-8 max-w-2xl mx-auto">
+        Join us as we build our lives on Christ and shine as lights in our generation.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="contact.html"
+           class="inline-block bg-white text-primary px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors">
+          Visit This Sunday
+        </a>
+        <a href="programs.html"
+           class="inline-block border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white/10 transition-colors">
+          Learn More
+        </a>
       </div>
     </section>
 
   </main>
 
   <!-- FOOTER -->
-  <footer class="mt-16 bg-secondary text-white text-center p-6">
-    <p>&copy; 2026 New Testament Baptist Church (NTBC) Youth Ministry</p>
+  <footer class="mt-16 bg-secondary text-white p-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <h4 class="font-heading text-lg font-bold mb-4">NTBC Youth Ministry</h4>
+          <p class="text-sm text-white/90">
+            Building young people on Christ to shine in their generation.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-heading text-lg font-bold mb-4">Service Times</h4>
+          <ul class="space-y-2 text-sm">
+            <li>Youth Fellowship: Sundays, 3:00 PM</li>
+            <li>Bible Study: Wednesdays, 5:00 PM</li>
+            <li>Prayer Meeting: Fridays, 6:00 PM</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-heading text-lg font-bold mb-4">Connect With Us</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="contact.html" class="hover:text-white/80 transition-colors">Contact Information</a></li>
+            <li><a href="programs.html" class="hover:text-white/80 transition-colors">Program Calendar</a></li>
+            <li><a href="events.html" class="hover:text-white/80 transition-colors">Event Updates</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-white/30 pt-6 text-center">
+        <p class="text-lg font-semibold">&copy; 2026 New Testament Baptist Church (NTBC) Youth Ministry</p>
+        <p class="text-sm mt-2 text-white/80">Built on Christ • Shining for His Glory • Transforming Our Generation</p>
+      </div>
+    </div>
   </footer>
+
+  <!-- Dark Mode Toggle Script -->
+  <script>
+    function toggleDark() {
+      document.documentElement.classList.toggle('dark');
+      const button = document.querySelector('button[onclick="toggleDark()"]');
+      if (document.documentElement.classList.contains('dark')) {
+        button.innerHTML = '☀️';
+        button.classList.remove('bg-white/20');
+        button.classList.add('bg-gray-700');
+      } else {
+        button.innerHTML = '🌙';
+        button.classList.remove('bg-gray-700');
+        button.classList.add('bg-white/20');
+      }
+    }
+  </script>
 
 </body>
 </html>
