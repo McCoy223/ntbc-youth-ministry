@@ -37,7 +37,7 @@
     }
   </script>
 </head>
-<body class="bg-background text-foreground font-body">
+<body class="bg-gray-50 dark:bg-slate-800 font-body">
 
 <header class="bg-gradient-to-r from-primary to-secondary text-white">
   <div class="max-w-7xl mx-auto flex items-center gap-4 p-6">
@@ -72,108 +72,215 @@
   </nav>
 </header>
 
-<main class="max-w-7xl mx-auto px-4 py-8">
-  <h2 class="font-heading text-3xl font-bold text-primary mb-6">Youth Ministry Finance</h2>
-
-  <p class="text-lg mb-8">
-    The NTBC Youth Ministry is committed to transparency, accountability,
-    and faithful stewardship of all funds entrusted to us.
+<main class="max-w-7xl mx-auto bg-white dark:bg-slate-900 dark:text-slate-200 -mt-6 rounded-xl shadow-xl p-8">
+  <h1 class="font-heading text-4xl font-bold text-primary mb-2">Youth Ministry Finance</h1>
+  <p class="text-lg text-gray-600 dark:text-slate-400 mb-8">
+    Transparency, Accountability, and Faithful Stewardship
   </p>
 
-  <div class="grid md:grid-cols-2 gap-8 mb-12">
-    <div class="bg-white p-6 rounded-xl shadow-md dark:bg-gray-800 dark:text-white">
-      <h3 class="font-heading text-xl font-bold text-secondary mb-4">Sources of Funds</h3>
-      <ul class="space-y-2">
-        <li class="flex items-center">
-          <span class="w-2 h-2 bg-secondary rounded-full mr-3"></span>
-          Offerings
+  <div class="grid lg:grid-cols-3 gap-8 mb-12">
+    <!-- Introduction Card -->
+    <div class="lg:col-span-2 bg-gradient-to-br from-blue-50 to-green-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-2xl">
+      <h2 class="font-heading text-2xl font-bold text-primary mb-4">Our Financial Commitment</h2>
+      <p class="text-lg mb-6">
+        The NTBC Youth Ministry is dedicated to transparent, accountable, and faithful stewardship 
+        of all funds entrusted to us. We believe that financial integrity is essential for effective ministry.
+      </p>
+      <blockquote class="border-l-4 border-secondary pl-6 italic text-lg py-2">
+        "Moreover it is required in stewards, that a man be found faithful."  
+        <br><span class="text-sm not-italic mt-2 block">— 1 Corinthians 4:2</span>
+      </blockquote>
+    </div>
+
+    <!-- Quick Stats Card -->
+    <div class="bg-gray-50 dark:bg-slate-800 p-8 rounded-2xl">
+      <h3 class="font-heading text-xl font-bold text-secondary mb-6">Financial Overview</h3>
+      <div class="space-y-6">
+        <div>
+          <p class="text-sm text-gray-500 dark:text-slate-400">Annual Budget</p>
+          <p class="text-2xl font-bold">GHS 15,000</p>
+        </div>
+        <div>
+          <p class="text-sm text-gray-500 dark:text-slate-400">Monthly Average</p>
+          <p class="text-2xl font-bold">GHS 1,250</p>
+        </div>
+        <div>
+          <p class="text-sm text-gray-500 dark:text-slate-400">Fund Utilization</p>
+          <div class="w-full bg-gray-200 dark:bg-slate-700 rounded-full h-2.5 mt-2">
+            <div class="bg-secondary h-2.5 rounded-full" style="width: 85%"></div>
+          </div>
+          <p class="text-sm mt-1">85% Program Spending</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sources and Uses Section -->
+  <div class="grid md:grid-cols-2 gap-8 mb-16">
+    <!-- Sources of Funds -->
+    <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-8 rounded-xl shadow-sm">
+      <div class="flex items-center mb-6">
+        <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mr-4">
+          <span class="text-2xl">💰</span>
+        </div>
+        <h3 class="font-heading text-2xl font-bold text-secondary">Sources of Funds</h3>
+      </div>
+      <ul class="space-y-4">
+        <li class="flex items-center p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
+          <span class="w-3 h-3 bg-secondary rounded-full mr-4"></span>
+          <div>
+            <p class="font-semibold">Weekly Offerings</p>
+            <p class="text-sm text-gray-600 dark:text-slate-400">From youth members during services</p>
+          </div>
         </li>
-        <li class="flex items-center">
-          <span class="w-2 h-2 bg-secondary rounded-full mr-3"></span>
-          Donations
+        <li class="flex items-center p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
+          <span class="w-3 h-3 bg-secondary rounded-full mr-4"></span>
+          <div>
+            <p class="font-semibold">Special Donations</p>
+            <p class="text-sm text-gray-600 dark:text-slate-400">From church members and well-wishers</p>
+          </div>
         </li>
-        <li class="flex items-center">
-          <span class="w-2 h-2 bg-secondary rounded-full mr-3"></span>
-          Fundraising activities
+        <li class="flex items-center p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
+          <span class="w-3 h-3 bg-secondary rounded-full mr-4"></span>
+          <div>
+            <p class="font-semibold">Fundraising Events</p>
+            <p class="text-sm text-gray-600 dark:text-slate-400">Sales, programs, and special activities</p>
+          </div>
         </li>
       </ul>
     </div>
 
-    <div class="bg-white p-6 rounded-xl shadow-md dark:bg-gray-800 dark:text-white">
-      <h3 class="font-heading text-xl font-bold text-secondary mb-4">Use of Funds</h3>
-      <ul class="space-y-2">
-        <li class="flex items-center">
-          <span class="w-2 h-2 bg-accent rounded-full mr-3"></span>
-          Youth programs and events
+    <!-- Use of Funds -->
+    <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-8 rounded-xl shadow-sm">
+      <div class="flex items-center mb-6">
+        <div class="w-12 h-12 bg-red-100 dark:bg-red-900 rounded-lg flex items-center justify-center mr-4">
+          <span class="text-2xl">📊</span>
+        </div>
+        <h3 class="font-heading text-2xl font-bold text-accent">Use of Funds</h3>
+      </div>
+      <ul class="space-y-4">
+        <li class="flex items-center p-3 bg-red-50 dark:bg-red-900/20 rounded-lg">
+          <span class="w-3 h-3 bg-accent rounded-full mr-4"></span>
+          <div>
+            <p class="font-semibold">Youth Programs & Events</p>
+            <p class="text-sm text-gray-600 dark:text-slate-400">Retreats, conferences, and weekly activities</p>
+          </div>
         </li>
-        <li class="flex items-center">
-          <span class="w-2 h-2 bg-accent rounded-full mr-3"></span>
-          Evangelism and outreach
+        <li class="flex items-center p-3 bg-red-50 dark:bg-red-900/20 rounded-lg">
+          <span class="w-3 h-3 bg-accent rounded-full mr-4"></span>
+          <div>
+            <p class="font-semibold">Evangelism & Outreach</p>
+            <p class="text-sm text-gray-600 dark:text-slate-400">Community projects and gospel campaigns</p>
+          </div>
         </li>
-        <li class="flex items-center">
-          <span class="w-2 h-2 bg-accent rounded-full mr-3"></span>
-          Welfare and support
+        <li class="flex items-center p-3 bg-red-50 dark:bg-red-900/20 rounded-lg">
+          <span class="w-3 h-3 bg-accent rounded-full mr-4"></span>
+          <div>
+            <p class="font-semibold">Welfare & Support</p>
+            <p class="text-sm text-gray-600 dark:text-slate-400">Assistance for members in need</p>
+          </div>
         </li>
       </ul>
     </div>
   </div>
 
-  <blockquote class="bg-gray-100 dark:bg-gray-800 border-l-4 border-primary p-6 italic text-lg my-8 rounded-r-lg">
-    "Moreover it is required in stewards, that a man be found faithful."  
-    <br><span class="text-sm not-italic mt-2 block">— 1 Corinthians 4:2</span>
-  </blockquote>
-
-  <!-- Additional Financial Information Section -->
-  <div class="mt-12 bg-gradient-to-r from-blue-50 to-green-50 dark:from-gray-800 dark:to-gray-900 p-8 rounded-2xl">
-    <h3 class="font-heading text-2xl font-bold text-primary mb-6">Financial Principles</h3>
+  <!-- Financial Principles -->
+  <div class="mb-12">
+    <h2 class="font-heading text-3xl font-bold text-primary mb-8 text-center">Our Financial Principles</h2>
     <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg">
-        <div class="text-3xl mb-4">💰</div>
-        <h4 class="font-bold text-lg mb-2">Stewardship</h4>
-        <p class="text-sm">Managing God's resources with wisdom and integrity.</p>
+      <div class="bg-gradient-to-b from-white to-gray-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-2xl text-center hover:shadow-lg transition-shadow">
+        <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-6">
+          <span class="text-2xl">🛡️</span>
+        </div>
+        <h3 class="font-heading text-xl font-bold mb-4">Integrity</h3>
+        <p class="text-gray-600 dark:text-slate-400">
+          All financial decisions are made with honesty and biblical principles.
+        </p>
       </div>
-      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg">
-        <div class="text-3xl mb-4">📊</div>
-        <h4 class="font-bold text-lg mb-2">Transparency</h4>
-        <p class="text-sm">Clear reporting and open communication about finances.</p>
+      <div class="bg-gradient-to-b from-white to-gray-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-2xl text-center hover:shadow-lg transition-shadow">
+        <div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-6">
+          <span class="text-2xl">👁️</span>
+        </div>
+        <h3 class="font-heading text-xl font-bold mb-4">Transparency</h3>
+        <p class="text-gray-600 dark:text-slate-400">
+          Regular reporting and open access to financial records for all members.
+        </p>
       </div>
-      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg">
-        <div class="text-3xl mb-4">🎯</div>
-        <h4 class="font-bold text-lg mb-2">Purpose</h4>
-        <p class="text-sm">Funding ministry that transforms lives and advances the Gospel.</p>
+      <div class="bg-gradient-to-b from-white to-gray-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-2xl text-center hover:shadow-lg transition-shadow">
+        <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-6">
+          <span class="text-2xl">🎯</span>
+        </div>
+        <h3 class="font-heading text-xl font-bold mb-4">Purpose</h3>
+        <p class="text-gray-600 dark:text-slate-400">
+          Every cedi is directed toward ministry that transforms lives for Christ.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Financial Reporting -->
+  <div class="bg-gradient-to-r from-blue-50 to-green-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-2xl">
+    <h2 class="font-heading text-2xl font-bold text-primary mb-6">Financial Reporting & Accountability</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <h3 class="font-bold text-lg mb-4">Regular Reports</h3>
+        <ul class="space-y-3">
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-primary rounded-full mr-3"></span>
+            Monthly financial statements
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-primary rounded-full mr-3"></span>
+            Quarterly review meetings
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-primary rounded-full mr-3"></span>
+            Annual audit presentation
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-4">Oversight Committee</h3>
+        <p class="text-gray-600 dark:text-slate-400">
+          Our finances are overseen by a committee of church leaders who ensure
+          proper use of funds and compliance with church policies.
+        </p>
       </div>
     </div>
   </div>
 </main>
 
-<footer class="bg-foreground text-white py-8 mt-12">
-  <div class="max-w-7xl mx-auto px-4">
-    <div class="grid md:grid-cols-3 gap-8">
+<footer class="mt-16 bg-secondary text-white text-center p-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
       <div>
-        <h4 class="font-heading text-lg font-bold mb-4">NTBC Youth Ministry</h4>
-        <p class="text-sm text-white/80">
-          Building young people on Christ to shine in their generation.
+        <h4 class="font-heading text-lg font-bold mb-4">Contact</h4>
+        <p class="text-sm text-white/90">
+          New Testament Baptist Church<br>
+          Afrancho-Bronkong<br>
+          +233 24 123 4567
         </p>
       </div>
       <div>
         <h4 class="font-heading text-lg font-bold mb-4">Quick Links</h4>
         <ul class="space-y-2 text-sm">
-          <li><a href="programs.html" class="hover:text-white/80 transition-colors">Programs</a></li>
+          <li><a href="programs.html" class="hover:text-white/80 transition-colors">Programs & Activities</a></li>
           <li><a href="events.html" class="hover:text-white/80 transition-colors">Upcoming Events</a></li>
-          <li><a href="contact.html" class="hover:text-white/80 transition-colors">Get in Touch</a></li>
+          <li><a href="leadership.html" class="hover:text-white/80 transition-colors">Meet Our Leaders</a></li>
         </ul>
       </div>
       <div>
         <h4 class="font-heading text-lg font-bold mb-4">Financial Integrity</h4>
-        <p class="text-sm text-white/80">
-          All finances are managed with accountability and reviewed regularly.
+        <p class="text-sm text-white/90">
+          All financial records are available for review by church members.
+          We maintain the highest standards of accountability.
         </p>
       </div>
     </div>
     
-    <div class="border-t border-white/20 mt-8 pt-6 text-center">
-      <p>&copy; 2026 New Testament Baptist Church (NTBC) Youth Ministry</p>
-      <p class="text-sm mt-2 text-white/60">All financial records are maintained in accordance with church policy.</p>
+    <div class="border-t border-white/30 pt-6">
+      <p class="text-lg font-semibold">&copy; 2026 New Testament Baptist Church (NTBC) Youth Ministry</p>
+      <p class="text-sm mt-2 text-white/80">Built on Christ • Shining for His Glory</p>
     </div>
   </div>
 </footer>
