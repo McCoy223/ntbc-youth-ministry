@@ -1,83 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NTBC Youth Ministry</title>
-  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Tailwind CDN (Compiled) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts (same as your tailwind.css) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Nunito+Sans:wght@600;700;800&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Your custom reset -->
+  <link rel="stylesheet" href="css/index.css">
+
+  <!-- Tailwind Theme Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563EB',
+            secondary: '#059669',
+            accent: '#DC2626',
+            background: '#FAFBFC',
+            foreground: '#1F2937'
+          },
+          fontFamily: {
+            heading: ['Nunito Sans', 'sans-serif'],
+            body: ['Source Sans 3', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
 
-<header>
-  <div class="header-container">
-    <img src="images/ntbc-logo.png" alt="NTBC Logo" class="logo">
-    <div>
-      <h1>New Testament Baptist Church</h1>
-      <p>Youth Ministry – Afrancho-Bronkong</p>
-    </div>
-  </div>
+<body class="bg-background text-foreground font-body">
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="programs.html">Programs</a>
-    <a href="leadership.html">Leadership</a>
-    <a href="finance.html">Finance</a>
-    <a href="events.html">Events</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
-<main class="container">
-
-  <section class="hero">
-    <h2>Welcome to NTBC Youth Ministry</h2>
-    <p>
-      Welcome to the Youth Ministry of <strong>New Testament Baptist Church (NTBC)</strong>,
-      Afrancho-Bronkong. We are committed to raising young people who are firmly built on Christ
-      and shining as lights in their generation.
-    </p>
-    <p>
-      <strong>Theme:</strong> Built to Shine<br>
-      <em>“But ye are a chosen generation…” – 1 Peter 2:9</em>
-    </p>
-
-    <a href="contact.html" class="btn">Join the Youth Ministry</a>
-  </section>
-
-  <h3>Our Focus</h3>
-  <div class="cards">
-    <div class="card">
-      <h4>Biblical Teaching</h4>
-      <p>Sound doctrine that builds strong Christian foundations.</p>
+  <!-- HEADER -->
+  <header class="bg-gradient-to-r from-primary to-secondary text-white">
+    <div class="max-w-7xl mx-auto flex items-center gap-4 p-6">
+      <img src="images/ntbc-logo.png" class="w-16" alt="NTBC Logo">
+      <div>
+        <h1 class="font-heading text-2xl font-extrabold">
+          New Testament Baptist Church
+        </h1>
+        <p class="text-sm opacity-90">
+          Youth Ministry – Afrancho-Bronkong
+        </p>
+      </div>
     </div>
 
-    <div class="card">
-      <h4>Spiritual Growth</h4>
-      <p>Encouraging prayer, devotion, and Christ-like living.</p>
-    </div>
+    <!-- NAV -->
+    <nav class="bg-black/20">
+      <div class="max-w-7xl mx-auto flex flex-wrap gap-6 px-6 py-3 font-semibold">
+        <a href="index.html" class="hover:text-accent">Home</a>
+        <a href="about.html" class="hover:text-accent">About</a>
+        <a href="programs.html" class="hover:text-accent">Programs</a>
+        <a href="leadership.html" class="hover:text-accent">Leadership</a>
+        <a href="finance.html" class="hover:text-accent">Finance</a>
+        <a href="events.html" class="hover:text-accent">Events</a>
+        <a href="contact.html" class="hover:text-accent">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-    <div class="card">
-      <h4>Youth Fellowship</h4>
-      <p>Building unity and love among young believers.</p>
-    </div>
+  <!-- MAIN -->
+  <main class="max-w-7xl mx-auto bg-white -mt-6 rounded-xl shadow-xl p-8">
 
-    <div class="card">
-      <h4>Leadership Development</h4>
-      <p>Training youth to serve God with excellence.</p>
-    </div>
-  </div>
+    <!-- HERO -->
+    <section class="bg-gray-50 rounded-xl p-8 mb-10">
+      <h2 class="font-heading text-3xl font-bold text-primary mb-4">
+        Welcome to NTBC Youth Ministry
+      </h2>
+      <p class="max-w-3xl">
+        We are committed to raising young people who are firmly built on Christ
+        and shining as lights in their generation.
+      </p>
 
-  <blockquote>
-    “Let no man despise thy youth; but be thou an example of the believers.”  
-    <br>— 1 Timothy 4:12
-  </blockquote>
+      <p class="mt-4 font-semibold">
+        Theme: <span class="text-secondary">Built to Shine</span><br>
+        <em class="text-sm">
+          “But ye are a chosen generation…” – 1 Peter 2:9
+        </em>
+      </p>
 
-</main>
+      <a href="contact.html"
+         class="inline-block mt-6 bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition">
+        Join the Youth Ministry
+      </a>
+    </section>
 
-<footer>
-  <p>&copy; 2026 New Testament Baptist Church (NTBC) Youth Ministry</p>
-</footer>
+    <!-- CARDS -->
+    <section>
+      <h3 class="font-heading text-2xl font-bold mb-6 text-primary">
+        Our Focus
+      </h3>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div class="bg-gray-100 p-6 rounded-xl shadow hover:-translate-y-1 transition">
+          <h4 class="font-bold text-secondary mb-2">Biblical Teaching</h4>
+          <p>Sound doctrine for strong Christian growth.</p>
+        </div>
+
+        <div class="bg-gray-100 p-6 rounded-xl shadow hover:-translate-y-1 transition">
+          <h4 class="font-bold text-secondary mb-2">Spiritual Growth</h4>
+          <p>Prayer, devotion, and Christ-like living.</p>
+        </div>
+
+        <div class="bg-gray-100 p-6 rounded-xl shadow hover:-translate-y-1 transition">
+          <h4 class="font-bold text-secondary mb-2">Youth Fellowship</h4>
+          <p>Unity, love, and strong relationships.</p>
+        </div>
+
+        <div class="bg-gray-100 p-6 rounded-xl shadow hover:-translate-y-1 transition">
+          <h4 class="font-bold text-secondary mb-2">Leadership</h4>
+          <p>Training tomorrow’s Christian leaders.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-16 bg-secondary text-white text-center p-6">
+    <p>&copy; 2026 New Testament Baptist Church (NTBC) Youth Ministry</p>
+  </footer>
 
 </body>
 </html>
