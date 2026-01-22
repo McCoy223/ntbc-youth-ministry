@@ -1,64 +1,282 @@
-<h2>About NTBC Youth Ministry</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | NTBC Youth Ministry</title>
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-<p>
-  The Youth Ministry of <strong>New Testament Baptist Church (NTBC)</strong>,
-  Afrancho-Bronkong, is committed to nurturing young people in their spiritual
-  journey and equipping them to live Christ-centered lives.
-</p>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Nunito+Sans:wght@600;700;800&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet">
 
-<p>
-  Our theme, <strong>"Built to Shine"</strong>, is drawn from Scripture and reminds
-  us that we are built upon Christ, the solid foundation, and called to shine
-  His light in our generation.
-</p>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
 
-<blockquote>
-  "Ye also, as lively stones, are built up a spiritual house."  
-  <br>— 1 Peter 2:5
-</blockquote>
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563EB',
+            secondary: '#059669',
+            accent: '#DC2626',
+            background: '#FAFBFC',
+            foreground: '#1F2937'
+          },
+          fontFamily: {
+            heading: ['Nunito Sans', 'sans-serif'],
+            body: ['Source Sans 3', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 dark:bg-slate-800 font-body">
 
-<h3>Our Vision</h3>
-<p>
-  To raise spiritually mature youth who are grounded in the Word of God and
-  shining as examples of Christ in the church and society.
-</p>
+<header class="bg-gradient-to-r from-primary to-secondary text-white">
+  <div class="max-w-7xl mx-auto flex items-center gap-4 p-6">
+    <img src="images/ntbc-logo.png" class="w-16" alt="NTBC Logo">
 
-<h3>Our Mission</h3>
-<ul>
-  <li>To teach sound biblical doctrine</li>
-  <li>To disciple and mentor young believers</li>
-  <li>To encourage godly character and discipline</li>
-  <li>To promote unity, service, and leadership among the youth</li>
-</ul>
+    <div>
+      <h1 class="font-heading text-2xl font-extrabold">
+        New Testament Baptist Church
+      </h1>
+      <p class="text-sm opacity-90">
+        Youth Ministry – Afrancho-Bronkong
+      </p>
+    </div>
 
-<h3>Our Core Values</h3>
-<ul>
-  <li>Faith in Christ</li>
-  <li>Integrity and Accountability</li>
-  <li>Love and Unity</li>
-  <li>Service and Stewardship</li>
-</ul>
+    <!-- Dark Mode Button -->
+    <button onclick="toggleDark()"
+      class="ml-auto bg-white/20 px-4 py-2 rounded-full text-sm font-semibold hover:bg-white/30 transition-colors">
+      🌙
+    </button>
+  </div>
 
-<section>
-  <h2 class="text-3xl font-heading font-bold text-primary mb-4">
-    About NTBC Youth Ministry
-  </h2>
+  <nav class="bg-black/20">
+    <div class="max-w-7xl mx-auto flex flex-wrap gap-6 px-6 py-3 font-semibold">
+      <a href="index.html" class="hover:text-white/80 transition-colors">Home</a>
+      <a href="about.html" class="underline decoration-2 underline-offset-4 hover:text-white/80 transition-colors">About</a>
+      <a href="programs.html" class="hover:text-white/80 transition-colors">Programs</a>
+      <a href="leadership.html" class="hover:text-white/80 transition-colors">Leadership</a>
+      <a href="finance.html" class="hover:text-white/80 transition-colors">Finance</a>
+      <a href="events.html" class="hover:text-white/80 transition-colors">Events</a>
+      <a href="contact.html" class="hover:text-white/80 transition-colors">Contact</a>
+    </div>
+  </nav>
+</header>
 
-  <p class="max-w-3xl mb-4">
-    The Youth Ministry of New Testament Baptist Church (NTBC),
-    Afrancho-Bronkong, is committed to nurturing young people in their
-    spiritual journey.
-  </p>
+<main class="max-w-7xl mx-auto bg-white dark:bg-slate-900 dark:text-slate-200 -mt-6 rounded-xl shadow-xl p-8">
+  
+  <!-- Main About Section -->
+  <section class="mb-12">
+    <h1 class="text-3xl font-heading font-bold text-primary mb-6">
+      About NTBC Youth Ministry
+    </h1>
 
-  <blockquote class="border-l-4 border-primary pl-4 italic my-6">
-    "Ye also, as lively stones, are built up a spiritual house."
-    <br>— 1 Peter 2:5
-  </blockquote>
+    <div class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-2xl mb-8">
+      <p class="text-lg mb-4">
+        The Youth Ministry of <strong>New Testament Baptist Church (NTBC)</strong>,
+        Afrancho-Bronkong, is committed to nurturing young people in their spiritual
+        journey and equipping them to live Christ-centered lives.
+      </p>
+      
+      <p class="text-lg">
+        Our theme, <strong>"Built to Shine"</strong>, is drawn from Scripture and reminds
+        us that we are built upon Christ, the solid foundation, and called to shine
+        His light in our generation.
+      </p>
+    </div>
 
-  <h3 class="text-xl font-bold text-secondary mt-6">Our Mission</h3>
-  <ul class="list-disc ml-6 mt-2 space-y-1">
-    <li>Teach sound biblical doctrine</li>
-    <li>Disciple young believers</li>
-    <li>Promote godly character</li>
-  </ul>
-</section>
+    <!-- Vision, Mission & Values Grid -->
+    <div class="grid md:grid-cols-3 gap-8 mb-12">
+      <!-- Vision Card -->
+      <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-6 rounded-xl shadow-sm">
+        <div class="flex items-center mb-4">
+          <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mr-4">
+            <span class="text-xl">👁️</span>
+          </div>
+          <h2 class="font-heading text-xl font-bold text-primary">Our Vision</h2>
+        </div>
+        <p class="text-gray-600 dark:text-slate-400">
+          To raise spiritually mature youth who are grounded in the Word of God and
+          shining as examples of Christ in the church and society.
+        </p>
+      </div>
+
+      <!-- Mission Card -->
+      <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-6 rounded-xl shadow-sm">
+        <div class="flex items-center mb-4">
+          <div class="w-10 h-10 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mr-4">
+            <span class="text-xl">🎯</span>
+          </div>
+          <h2 class="font-heading text-xl font-bold text-secondary">Our Mission</h2>
+        </div>
+        <ul class="space-y-2 text-gray-600 dark:text-slate-400">
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-secondary rounded-full mr-3"></span>
+            To teach sound biblical doctrine
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-secondary rounded-full mr-3"></span>
+            To disciple and mentor young believers
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-secondary rounded-full mr-3"></span>
+            To encourage godly character and discipline
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-secondary rounded-full mr-3"></span>
+            To promote unity, service, and leadership
+          </li>
+        </ul>
+      </div>
+
+      <!-- Values Card -->
+      <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-6 rounded-xl shadow-sm">
+        <div class="flex items-center mb-4">
+          <div class="w-10 h-10 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mr-4">
+            <span class="text-xl">❤️</span>
+          </div>
+          <h2 class="font-heading text-xl font-bold text-purple-600 dark:text-purple-400">Our Core Values</h2>
+        </div>
+        <ul class="space-y-2 text-gray-600 dark:text-slate-400">
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+            Faith in Christ
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+            Integrity and Accountability
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+            Love and Unity
+          </li>
+          <li class="flex items-center">
+            <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+            Service and Stewardship
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Scripture Quote -->
+    <div class="bg-gradient-to-r from-primary/10 to-secondary/10 dark:from-slate-800 dark:to-slate-900 p-8 rounded-2xl">
+      <blockquote class="border-l-4 border-primary pl-6 italic text-lg py-2">
+        "Ye also, as lively stones, are built up a spiritual house, an holy priesthood, to offer up spiritual sacrifices, acceptable to God by Jesus Christ."
+        <br><span class="text-sm not-italic mt-2 block text-gray-600 dark:text-slate-400">— 1 Peter 2:5</span>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- History & Purpose Section -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-heading font-bold text-primary mb-6">Our Foundation</h2>
+    
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-gray-200 dark:border-slate-700">
+        <h3 class="font-bold text-lg mb-4 text-secondary">Purpose</h3>
+        <p class="mb-4 text-gray-600 dark:text-slate-400">
+          The NTBC Youth Ministry exists to provide a spiritual home where young people can grow in faith, develop meaningful relationships, and discover their God-given purpose.
+        </p>
+        <p class="text-gray-600 dark:text-slate-400">
+          We believe that every young person has a unique calling and potential that can be realized through Christ-centered discipleship.
+        </p>
+      </div>
+      
+      <div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-gray-200 dark:border-slate-700">
+        <h3 class="font-bold text-lg mb-4 text-secondary">Our Approach</h3>
+        <ul class="space-y-3 text-gray-600 dark:text-slate-400">
+          <li class="flex items-start">
+            <span class="w-2 h-2 bg-secondary rounded-full mt-2 mr-3"></span>
+            <span>Biblical teaching through engaging lessons and studies</span>
+          </li>
+          <li class="flex items-start">
+            <span class="w-2 h-2 bg-secondary rounded-full mt-2 mr-3"></span>
+            <span>Practical discipleship and mentorship relationships</span>
+          </li>
+          <li class="flex items-start">
+            <span class="w-2 h-2 bg-secondary rounded-full mt-2 mr-3"></span>
+            <span>Community building through fellowship and activities</span>
+          </li>
+          <li class="flex items-start">
+            <span class="w-2 h-2 bg-secondary rounded-full mt-2 mr-3"></span>
+            <span>Leadership development and service opportunities</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Us CTA -->
+  <div class="bg-gradient-to-r from-primary to-secondary text-white p-8 rounded-2xl text-center">
+    <h2 class="font-heading text-2xl font-bold mb-4">Join Our Youth Family</h2>
+    <p class="mb-6 max-w-2xl mx-auto">
+      Whether you're looking for spiritual growth, meaningful friendships, or opportunities to serve, there's a place for you in the NTBC Youth Ministry.
+    </p>
+    <a href="contact.html" class="inline-block bg-white text-primary font-bold px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors">
+      Get Involved
+    </a>
+  </div>
+</main>
+
+<footer class="mt-16 bg-secondary text-white text-center p-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <h4 class="font-heading text-lg font-bold mb-4">Our Location</h4>
+        <p class="text-sm text-white/90">
+          New Testament Baptist Church<br>
+          Afrancho-Bronkong, Kumasi<br>
+          Ghana
+        </p>
+      </div>
+      <div>
+        <h4 class="font-heading text-lg font-bold mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="programs.html" class="hover:text-white/80 transition-colors">Programs</a></li>
+          <li><a href="events.html" class="hover:text-white/80 transition-colors">Events</a></li>
+          <li><a href="leadership.html" class="hover:text-white/80 transition-colors">Leadership</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-heading text-lg font-bold mb-4">Connect With Us</h4>
+        <p class="text-sm text-white/90">
+          Join our weekly fellowship and be part of a growing community of young believers.
+        </p>
+      </div>
+    </div>
+    
+    <div class="border-t border-white/30 pt-6">
+      <p class="text-lg font-semibold">&copy; 2026 New Testament Baptist Church (NTBC) Youth Ministry</p>
+      <p class="text-sm mt-2 text-white/80">Built on Christ • Growing in Faith • Serving in Love</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Dark Mode Toggle Script -->
+<script>
+  function toggleDark() {
+    document.documentElement.classList.toggle('dark');
+    const button = document.querySelector('button[onclick="toggleDark()"]');
+    if (document.documentElement.classList.contains('dark')) {
+      button.innerHTML = '☀️';
+      button.classList.remove('bg-white/20');
+      button.classList.add('bg-gray-700');
+    } else {
+      button.innerHTML = '🌙';
+      button.classList.remove('bg-gray-700');
+      button.classList.add('bg-white/20');
+    }
+  }
+</script>
+
+</body>
+</html>
