@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - NTBC Youth Ministry</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/auth.js" defer></script>
+    <script src="../js/database.js" defer></script>
+    <script src="admin.js" defer></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="admin-nav">
+        <div class="nav-brand">
+            <img src="../assets/logo.png" alt="Logo">
+            <h2>Admin Panel</h2>
+        </div>
+        
+        <div class="user-menu">
+            <span id="userGreeting">Welcome, Admin</span>
+            <button onclick="logoutUser()" class="btn-logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+    </nav>
+    
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-menu">
+                <a href="dashboard.html" class="active">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+                <a href="members.html">
+                    <i class="fas fa-users"></i> Members
+                </a>
+                <a href="finances.html">
+                    <i class="fas fa-chart-line"></i> Finances
+                </a>
+                <a href="events.html">
+                    <i class="fas fa-calendar-alt"></i> Events
+                </a>
+                <a href="announcements.html">
+                    <i class="fas fa-bullhorn"></i> Announcements
+                </a>
+                <a href="reports.html">
+                    <i class="fas fa-chart-bar"></i> Reports
+                </a>
+                <a href="settings.html">
+                    <i class="fas fa-cog"></i> Settings
+                </a>
+            </div>
+            
+            <div class="sidebar-stats">
+                <h4>Quick Stats</h4>
+                <div class="stat-item">
+                    <span>Total Members:</span>
+                    <strong id="totalMembers">0</strong>
+                </div>
+                <div class="stat-item">
+                    <span>Active Events:</span>
+                    <strong id="activeEvents">0</strong>
+                </div>
+                <div class="stat-item">
+                    <span>This Month:</span>
+                    <strong id="monthFinances">$0</strong>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="admin-content">
+            <div class="content-header">
+                <h1>Dashboard Overview</h1>
+                <div class="header-actions">
+                    <button class="btn-primary" onclick="openQuickAdd()">
+                        <i class="fas fa-plus"></i> Quick Add
+                    </button>
+                    <button class="btn-secondary" onclick="refreshDashboard()">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #4CAF50;">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="memberCount">0</h3>
+                        <p>Total Members</p>
+                    </div>
+                    <a href="members.html" class="stat-link">View All →</a>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #2196F3;">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="eventCount">0</h3>
+                        <p>Upcoming Events</p>
+                    </div>
+                    <a href="events.html" class="stat-link">View All →</a>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #FF9800;">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalBalance">$0</h3>
+                        <p>Total Balance</p>
+                    </div>
+                    <a href="finances.html" class="stat-link">View Details →</a>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #9C27B0;">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="activeMembers">0</h3>
+                        <p>Active This Month</p>
+                    </div>
+                    <a href="reports.html" class="stat-link">View Report →</a>
+                </div>
+            </div>
+            
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <h2>Quick Actions</h2>
+                <div class="actions-grid">
+                    <button class="action-btn" onclick="window.location.href='members.html?action=add'">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Add New Member</span>
+                    </button>
+                    <button class="action-btn" onclick="window.location.href='finances.html?action=add'">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <span>Record Payment</span>
+                    </button>
+                    <button class="action-btn" onclick="window.location.href='events.html?action=add'">
+                        <i class="fas fa-calendar-plus"></i>
+                        <span>Create Event</span>
+                    </button>
+                    <button class="action-btn" onclick="window.location.href='announcements.html?action=add'">
+                        <i class="fas fa-bullhorn"></i>
+                        <span>Post Announcement</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Recent Activity -->
+            <div class="recent-activity">
+                <h2>Recent Activity</h2>
+                <div class="activity-list" id="activityList">
+                    <div class="activity-item loading">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <span>Loading activities...</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Quick Add Modal -->
+    <div id="quickAddModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Quick Add</h3>
+                <button class="modal-close" onclick="closeQuickAdd()">×</button>
+            </div>
+            <div class="modal-body">
+                <!-- Content will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
