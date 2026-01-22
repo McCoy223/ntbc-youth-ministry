@@ -37,59 +37,113 @@
     }
   </script>
 </head>
-<body>
+<body class="bg-background text-foreground font-body">
 
-<header>
-  <div class="header-container">
-    <img src="images/ntbc-logo.png" alt="NTBC Logo" class="logo">
-    <div>
-      <h1>New Testament Baptist Church</h1>
-      <p>Youth Ministry – Afrancho-Bronkong</p>
+<header class="bg-primary text-white">
+  <div class="header-container flex items-center justify-between">
+    <div class="flex items-center">
+      <img src="images/ntbc-logo.png" alt="NTBC Logo" class="logo w-16 h-16 mr-4">
+      <div>
+        <h1 class="font-heading text-2xl font-bold">New Testament Baptist Church</h1>
+        <p class="text-white/90">Youth Ministry – Afrancho-Bronkong</p>
+      </div>
     </div>
+    
+    <!-- Dark Mode Toggle Button -->
+    <button onclick="toggleDark()"
+      class="ml-auto bg-white/20 px-4 py-2 rounded-full text-sm font-semibold hover:bg-white/30 transition-colors">
+      🌙 Dark
+    </button>
   </div>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="programs.html">Programs</a>
-    <a href="leadership.html">Leadership</a>
-    <a href="finance.html">Finance</a>
-    <a href="events.html">Events</a>
-    <a href="contact.html">Contact</a>
+  <nav class="bg-primary/90 py-3">
+    <div class="container mx-auto flex flex-wrap justify-center gap-4 md:gap-8">
+      <a href="index.html" class="text-white hover:text-white/80 transition-colors">Home</a>
+      <a href="about.html" class="text-white hover:text-white/80 transition-colors">About</a>
+      <a href="programs.html" class="text-white hover:text-white/80 transition-colors">Programs</a>
+      <a href="leadership.html" class="text-white hover:text-white/80 transition-colors">Leadership</a>
+      <a href="finance.html" class="text-white font-semibold hover:text-white/80 transition-colors">Finance</a>
+      <a href="events.html" class="text-white hover:text-white/80 transition-colors">Events</a>
+      <a href="contact.html" class="text-white hover:text-white/80 transition-colors">Contact</a>
+    </div>
   </nav>
 </header>
 
-<main class="container">
-  <h2>Youth Ministry Finance</h2>
+<main class="container mx-auto px-4 py-8 max-w-4xl">
+  <h2 class="font-heading text-3xl font-bold text-primary mb-6">Youth Ministry Finance</h2>
 
-  <p>
+  <p class="text-lg mb-8">
     The NTBC Youth Ministry is committed to transparency, accountability,
     and faithful stewardship of all funds entrusted to us.
   </p>
 
-  <h3>Sources of Funds</h3>
-  <ul>
-    <li>Offerings</li>
-    <li>Donations</li>
-    <li>Fundraising activities</li>
-  </ul>
+  <div class="grid md:grid-cols-2 gap-8 mb-12">
+    <div class="bg-white p-6 rounded-xl shadow-md dark:bg-gray-800 dark:text-white">
+      <h3 class="font-heading text-xl font-bold text-secondary mb-4">Sources of Funds</h3>
+      <ul class="space-y-2">
+        <li class="flex items-center">
+          <span class="w-2 h-2 bg-secondary rounded-full mr-3"></span>
+          Offerings
+        </li>
+        <li class="flex items-center">
+          <span class="w-2 h-2 bg-secondary rounded-full mr-3"></span>
+          Donations
+        </li>
+        <li class="flex items-center">
+          <span class="w-2 h-2 bg-secondary rounded-full mr-3"></span>
+          Fundraising activities
+        </li>
+      </ul>
+    </div>
 
-  <h3>Use of Funds</h3>
-  <ul>
-    <li>Youth programs and events</li>
-    <li>Evangelism and outreach</li>
-    <li>Welfare and support</li>
-  </ul>
+    <div class="bg-white p-6 rounded-xl shadow-md dark:bg-gray-800 dark:text-white">
+      <h3 class="font-heading text-xl font-bold text-secondary mb-4">Use of Funds</h3>
+      <ul class="space-y-2">
+        <li class="flex items-center">
+          <span class="w-2 h-2 bg-accent rounded-full mr-3"></span>
+          Youth programs and events
+        </li>
+        <li class="flex items-center">
+          <span class="w-2 h-2 bg-accent rounded-full mr-3"></span>
+          Evangelism and outreach
+        </li>
+        <li class="flex items-center">
+          <span class="w-2 h-2 bg-accent rounded-full mr-3"></span>
+          Welfare and support
+        </li>
+      </ul>
+    </div>
+  </div>
 
-  <blockquote>
+  <blockquote class="bg-gray-100 dark:bg-gray-800 border-l-4 border-primary p-6 italic text-lg my-8 rounded-r-lg">
     "Moreover it is required in stewards, that a man be found faithful."  
-    <br>— 1 Corinthians 4:2
+    <br><span class="text-sm not-italic mt-2 block">— 1 Corinthians 4:2</span>
   </blockquote>
 </main>
 
-<footer>
-  <p>&copy; 2026 New Testament Baptist Church (NTBC) Youth Ministry</p>
+<footer class="bg-foreground text-white py-6 mt-12">
+  <div class="container mx-auto text-center">
+    <p>&copy; 2026 New Testament Baptist Church (NTBC) Youth Ministry</p>
+    <p class="text-sm mt-2 text-white/80">All Rights Reserved</p>
+  </div>
 </footer>
+
+<!-- Dark Mode Toggle Script -->
+<script>
+  function toggleDark() {
+    document.documentElement.classList.toggle('dark');
+    const button = document.querySelector('button[onclick="toggleDark()"]');
+    if (document.documentElement.classList.contains('dark')) {
+      button.innerHTML = '☀️ Light';
+      button.classList.remove('bg-white/20');
+      button.classList.add('bg-gray-700');
+    } else {
+      button.innerHTML = '🌙 Dark';
+      button.classList.remove('bg-gray-700');
+      button.classList.add('bg-white/20');
+    }
+  }
+</script>
 
 </body>
 </html>
