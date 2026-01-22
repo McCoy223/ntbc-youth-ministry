@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - NTBC Youth Ministry</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js" defer></script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <img src="assets/logo.png" alt="NTBC Logo" class="logo">
+            <h1>Youth Ministry Portal</h1>
+            <p>Login to access your dashboard</p>
+        </div>
+        
+        <div class="login-card">
+            <h2>Sign In</h2>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required 
+                           placeholder="you@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" required>
+                        <button type="button" class="show-password" onclick="togglePassword()">
+                            👁️
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="form-options">
+                    <label class="checkbox">
+                        <input type="checkbox" id="remember" name="remember">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="forgot-password.html" class="forgot-link">Forgot Password?</a>
+                </div>
+                
+                <div class="role-selection">
+                    <label>I am logging in as:</label>
+                    <div class="role-options">
+                        <label class="role-option">
+                            <input type="radio" name="role" value="member" checked>
+                            <div class="role-card">
+                                <h4>👥 Member</h4>
+                                <p>View member directory, events, and finances</p>
+                            </div>
+                        </label>
+                        <label class="role-option">
+                            <input type="radio" name="role" value="admin">
+                            <div class="role-card">
+                                <h4>⚙️ Administrator</h4>
+                                <p>Full system access and management</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-login" id="loginBtn">
+                    <span class="btn-text">Sign In</span>
+                    <span class="btn-loader" style="display: none;">⏳</span>
+                </button>
+                
+                <div id="errorMessage" class="error-message" style="display: none;"></div>
+                
+                <div class="login-footer">
+                    <p>Need an account? <a href="contact.html">Contact Administrator</a></p>
+                    <p><a href="index.html">← Back to Homepage</a></p>
+                </div>
+            </form>
+        </div>
+        
+        <div class="security-notice">
+            <p>🔒 Secured by Firebase Authentication</p>
+        </div>
+    </div>
+</body>
+</html>
