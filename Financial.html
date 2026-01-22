@@ -39,37 +39,40 @@
 </head>
 <body class="bg-background text-foreground font-body">
 
-<header class="bg-primary text-white">
-  <div class="header-container flex items-center justify-between">
-    <div class="flex items-center">
-      <img src="images/ntbc-logo.png" alt="NTBC Logo" class="logo w-16 h-16 mr-4">
-      <div>
-        <h1 class="font-heading text-2xl font-bold">New Testament Baptist Church</h1>
-        <p class="text-white/90">Youth Ministry – Afrancho-Bronkong</p>
-      </div>
+<header class="bg-gradient-to-r from-primary to-secondary text-white">
+  <div class="max-w-7xl mx-auto flex items-center gap-4 p-6">
+    <img src="images/ntbc-logo.png" class="w-16" alt="NTBC Logo">
+
+    <div>
+      <h1 class="font-heading text-2xl font-extrabold">
+        New Testament Baptist Church
+      </h1>
+      <p class="text-sm opacity-90">
+        Youth Ministry – Afrancho-Bronkong
+      </p>
     </div>
-    
-    <!-- Dark Mode Toggle Button -->
+
+    <!-- Dark Mode Button -->
     <button onclick="toggleDark()"
       class="ml-auto bg-white/20 px-4 py-2 rounded-full text-sm font-semibold hover:bg-white/30 transition-colors">
-      🌙 Dark
+      🌙
     </button>
   </div>
 
-  <nav class="bg-primary/90 py-3">
-    <div class="container mx-auto flex flex-wrap justify-center gap-4 md:gap-8">
-      <a href="index.html" class="text-white hover:text-white/80 transition-colors">Home</a>
-      <a href="about.html" class="text-white hover:text-white/80 transition-colors">About</a>
-      <a href="programs.html" class="text-white hover:text-white/80 transition-colors">Programs</a>
-      <a href="leadership.html" class="text-white hover:text-white/80 transition-colors">Leadership</a>
-      <a href="finance.html" class="text-white font-semibold hover:text-white/80 transition-colors">Finance</a>
-      <a href="events.html" class="text-white hover:text-white/80 transition-colors">Events</a>
-      <a href="contact.html" class="text-white hover:text-white/80 transition-colors">Contact</a>
+  <nav class="bg-black/20">
+    <div class="max-w-7xl mx-auto flex flex-wrap gap-6 px-6 py-3 font-semibold">
+      <a href="index.html" class="hover:text-white/80 transition-colors">Home</a>
+      <a href="about.html" class="hover:text-white/80 transition-colors">About</a>
+      <a href="programs.html" class="hover:text-white/80 transition-colors">Programs</a>
+      <a href="leadership.html" class="hover:text-white/80 transition-colors">Leadership</a>
+      <a href="finance.html" class="underline decoration-2 underline-offset-4 hover:text-white/80 transition-colors">Finance</a>
+      <a href="events.html" class="hover:text-white/80 transition-colors">Events</a>
+      <a href="contact.html" class="hover:text-white/80 transition-colors">Contact</a>
     </div>
   </nav>
 </header>
 
-<main class="container mx-auto px-4 py-8 max-w-4xl">
+<main class="max-w-7xl mx-auto px-4 py-8">
   <h2 class="font-heading text-3xl font-bold text-primary mb-6">Youth Ministry Finance</h2>
 
   <p class="text-lg mb-8">
@@ -119,12 +122,59 @@
     "Moreover it is required in stewards, that a man be found faithful."  
     <br><span class="text-sm not-italic mt-2 block">— 1 Corinthians 4:2</span>
   </blockquote>
+
+  <!-- Additional Financial Information Section -->
+  <div class="mt-12 bg-gradient-to-r from-blue-50 to-green-50 dark:from-gray-800 dark:to-gray-900 p-8 rounded-2xl">
+    <h3 class="font-heading text-2xl font-bold text-primary mb-6">Financial Principles</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg">
+        <div class="text-3xl mb-4">💰</div>
+        <h4 class="font-bold text-lg mb-2">Stewardship</h4>
+        <p class="text-sm">Managing God's resources with wisdom and integrity.</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg">
+        <div class="text-3xl mb-4">📊</div>
+        <h4 class="font-bold text-lg mb-2">Transparency</h4>
+        <p class="text-sm">Clear reporting and open communication about finances.</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg">
+        <div class="text-3xl mb-4">🎯</div>
+        <h4 class="font-bold text-lg mb-2">Purpose</h4>
+        <p class="text-sm">Funding ministry that transforms lives and advances the Gospel.</p>
+      </div>
+    </div>
+  </div>
 </main>
 
-<footer class="bg-foreground text-white py-6 mt-12">
-  <div class="container mx-auto text-center">
-    <p>&copy; 2026 New Testament Baptist Church (NTBC) Youth Ministry</p>
-    <p class="text-sm mt-2 text-white/80">All Rights Reserved</p>
+<footer class="bg-foreground text-white py-8 mt-12">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid md:grid-cols-3 gap-8">
+      <div>
+        <h4 class="font-heading text-lg font-bold mb-4">NTBC Youth Ministry</h4>
+        <p class="text-sm text-white/80">
+          Building young people on Christ to shine in their generation.
+        </p>
+      </div>
+      <div>
+        <h4 class="font-heading text-lg font-bold mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="programs.html" class="hover:text-white/80 transition-colors">Programs</a></li>
+          <li><a href="events.html" class="hover:text-white/80 transition-colors">Upcoming Events</a></li>
+          <li><a href="contact.html" class="hover:text-white/80 transition-colors">Get in Touch</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-heading text-lg font-bold mb-4">Financial Integrity</h4>
+        <p class="text-sm text-white/80">
+          All finances are managed with accountability and reviewed regularly.
+        </p>
+      </div>
+    </div>
+    
+    <div class="border-t border-white/20 mt-8 pt-6 text-center">
+      <p>&copy; 2026 New Testament Baptist Church (NTBC) Youth Ministry</p>
+      <p class="text-sm mt-2 text-white/60">All financial records are maintained in accordance with church policy.</p>
+    </div>
   </div>
 </footer>
 
@@ -134,11 +184,11 @@
     document.documentElement.classList.toggle('dark');
     const button = document.querySelector('button[onclick="toggleDark()"]');
     if (document.documentElement.classList.contains('dark')) {
-      button.innerHTML = '☀️ Light';
+      button.innerHTML = '☀️';
       button.classList.remove('bg-white/20');
       button.classList.add('bg-gray-700');
     } else {
-      button.innerHTML = '🌙 Dark';
+      button.innerHTML = '🌙';
       button.classList.remove('bg-gray-700');
       button.classList.add('bg-white/20');
     }
