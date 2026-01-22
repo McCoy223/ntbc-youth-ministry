@@ -4,86 +4,315 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - NTBC Youth Ministry</title>
+    
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Nunito+Sans:wght@600;700;800&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="js/firebase-config.js"></script>
     <script src="js/auth.js" defer></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        secondary: '#059669',
+                        accent: '#DC2626',
+                        background: '#FAFBFC',
+                        foreground: '#1F2937'
+                    },
+                    fontFamily: {
+                        heading: ['Nunito Sans', 'sans-serif'],
+                        body: ['Source Sans 3', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <div class="login-container">
-        <div class="login-header">
-            <img src="assets/logo.png" alt="NTBC Logo" class="logo">
-            <h1>Youth Ministry Portal</h1>
-            <p>Login to access your dashboard</p>
+<body class="bg-gray-50 dark:bg-slate-800 font-body min-h-screen">
+
+<header class="bg-gradient-to-r from-primary to-secondary text-white">
+    <div class="max-w-7xl mx-auto flex items-center gap-4 p-6">
+        <img src="images/ntbc-logo.png" class="w-16" alt="NTBC Logo">
+
+        <div>
+            <h1 class="font-heading text-2xl font-extrabold">
+                New Testament Baptist Church
+            </h1>
+            <p class="text-sm opacity-90">
+                Youth Ministry – Afrancho-Bronkong
+            </p>
         </div>
-        
-        <div class="login-card">
-            <h2>Sign In</h2>
-            
-            <form id="loginForm">
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required 
-                           placeholder="you@example.com">
-                </div>
-                
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <div class="password-wrapper">
-                        <input type="password" id="password" name="password" required>
-                        <button type="button" class="show-password" onclick="togglePassword()">
-                            👁️
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="form-options">
-                    <label class="checkbox">
-                        <input type="checkbox" id="remember" name="remember">
-                        <span>Remember me</span>
-                    </label>
-                    <a href="forgot-password.html" class="forgot-link">Forgot Password?</a>
-                </div>
-                
-                <div class="role-selection">
-                    <label>I am logging in as:</label>
-                    <div class="role-options">
-                        <label class="role-option">
-                            <input type="radio" name="role" value="member" checked>
-                            <div class="role-card">
-                                <h4>👥 Member</h4>
-                                <p>View member directory, events, and finances</p>
-                            </div>
-                        </label>
-                        <label class="role-option">
-                            <input type="radio" name="role" value="admin">
-                            <div class="role-card">
-                                <h4>⚙️ Administrator</h4>
-                                <p>Full system access and management</p>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-                
-                <button type="submit" class="btn-login" id="loginBtn">
-                    <span class="btn-text">Sign In</span>
-                    <span class="btn-loader" style="display: none;">⏳</span>
-                </button>
-                
-                <div id="errorMessage" class="error-message" style="display: none;"></div>
-                
-                <div class="login-footer">
-                    <p>Need an account? <a href="contact.html">Contact Administrator</a></p>
-                    <p><a href="index.html">← Back to Homepage</a></p>
-                </div>
-            </form>
+
+        <!-- Dark Mode Button -->
+        <button onclick="toggleDark()"
+            class="ml-auto bg-white/20 px-4 py-2 rounded-full text-sm font-semibold hover:bg-white/30 transition-colors">
+            🌙
+        </button>
+    </div>
+
+    <nav class="bg-black/20">
+        <div class="max-w-7xl mx-auto flex flex-wrap gap-6 px-6 py-3 font-semibold">
+            <a href="index.html" class="hover:text-white/80 transition-colors">Home</a>
+            <a href="about.html" class="hover:text-white/80 transition-colors">About</a>
+            <a href="programs.html" class="hover:text-white/80 transition-colors">Programs</a>
+            <a href="leadership.html" class="hover:text-white/80 transition-colors">Leadership</a>
+            <a href="finance.html" class="hover:text-white/80 transition-colors">Finance</a>
+            <a href="events.html" class="hover:text-white/80 transition-colors">Events</a>
+            <a href="contact.html" class="hover:text-white/80 transition-colors">Contact</a>
+            <a href="login.html" class="underline decoration-2 underline-offset-4 hover:text-white/80 transition-colors">Login</a>
         </div>
-        
-        <div class="security-notice">
-            <p>🔒 Secured by Firebase Authentication</p>
+    </nav>
+</header>
+
+<main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md mx-auto">
+        <!-- Login Card -->
+        <div class="bg-white dark:bg-slate-900 rounded-2xl shadow-xl overflow-hidden">
+            <!-- Card Header -->
+            <div class="px-8 pt-8 pb-6 bg-gradient-to-r from-primary/10 to-secondary/10 dark:from-slate-800 dark:to-slate-900">
+                <div class="flex flex-col items-center text-center">
+                    <img src="images/ntbc-logo.png" alt="NTBC Logo" class="w-20 h-20 mb-4">
+                    <h1 class="font-heading text-2xl font-bold text-gray-900 dark:text-white">
+                        Youth Ministry Portal
+                    </h1>
+                    <p class="mt-2 text-sm text-gray-600 dark:text-slate-400">
+                        Login to access your dashboard
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="px-8 py-8">
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Sign In</h2>
+
+                <form id="loginForm">
+                    <!-- Email Input -->
+                    <div class="mb-6">
+                        <label for="email" class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
+                            Email Address
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required
+                            class="w-full px-4 py-3 bg-gray-50 dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:text-white"
+                            placeholder="you@example.com"
+                        >
+                    </div>
+
+                    <!-- Password Input -->
+                    <div class="mb-6">
+                        <label for="password" class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-2">
+                            Password
+                        </label>
+                        <div class="relative">
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password" 
+                                required
+                                class="w-full px-4 py-3 bg-gray-50 dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:text-white pr-12"
+                            >
+                            <button 
+                                type="button" 
+                                onclick="togglePassword()"
+                                class="absolute right-3 top-3 text-gray-500 hover:text-gray-700 dark:text-slate-400 dark:hover:text-slate-300"
+                            >
+                                👁️
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Remember Me & Forgot Password -->
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center">
+                            <input 
+                                type="checkbox" 
+                                id="remember" 
+                                name="remember"
+                                class="w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-primary dark:focus:ring-primary dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                            >
+                            <label for="remember" class="ml-2 text-sm text-gray-700 dark:text-slate-300">
+                                Remember me
+                            </label>
+                        </div>
+                        <a href="forgot-password.html" class="text-sm text-primary hover:text-primary/80 dark:text-blue-400">
+                            Forgot Password?
+                        </a>
+                    </div>
+
+                    <!-- Role Selection -->
+                    <div class="mb-8">
+                        <label class="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-3">
+                            I am logging in as:
+                        </label>
+                        <div class="grid grid-cols-2 gap-4">
+                            <!-- Member Role -->
+                            <label class="relative">
+                                <input 
+                                    type="radio" 
+                                    name="role" 
+                                    value="member" 
+                                    checked
+                                    class="sr-only peer"
+                                >
+                                <div class="p-4 bg-gray-50 dark:bg-slate-800 border-2 border-gray-200 dark:border-slate-700 rounded-lg cursor-pointer hover:border-primary dark:hover:border-blue-400 peer-checked:border-primary dark:peer-checked:border-blue-400 peer-checked:bg-blue-50 dark:peer-checked:bg-blue-900/20">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mr-3">
+                                            <span class="text-xl">👥</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-gray-900 dark:text-white">Member</h4>
+                                            <p class="text-xs text-gray-600 dark:text-slate-400 mt-1">
+                                                View directory, events, finances
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <!-- Admin Role -->
+                            <label class="relative">
+                                <input 
+                                    type="radio" 
+                                    name="role" 
+                                    value="admin"
+                                    class="sr-only peer"
+                                >
+                                <div class="p-4 bg-gray-50 dark:bg-slate-800 border-2 border-gray-200 dark:border-slate-700 rounded-lg cursor-pointer hover:border-primary dark:hover:border-blue-400 peer-checked:border-primary dark:peer-checked:border-blue-400 peer-checked:bg-blue-50 dark:peer-checked:bg-blue-900/20">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mr-3">
+                                            <span class="text-xl">⚙️</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-gray-900 dark:text-white">Admin</h4>
+                                            <p class="text-xs text-gray-600 dark:text-slate-400 mt-1">
+                                                Full system management
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button 
+                        type="submit" 
+                        id="loginBtn"
+                        class="w-full bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                    >
+                        <span class="btn-text">Sign In</span>
+                        <span class="btn-loader hidden">⏳</span>
+                    </button>
+
+                    <!-- Error Message -->
+                    <div id="errorMessage" class="mt-4 p-3 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 rounded-lg hidden">
+                        <p class="text-sm text-red-700 dark:text-red-300"></p>
+                    </div>
+
+                    <!-- Login Footer -->
+                    <div class="mt-8 pt-6 border-t border-gray-200 dark:border-slate-700">
+                        <p class="text-center text-sm text-gray-600 dark:text-slate-400 mb-2">
+                            Need an account? 
+                            <a href="contact.html" class="text-primary hover:text-primary/80 dark:text-blue-400">
+                                Contact Administrator
+                            </a>
+                        </p>
+                        <p class="text-center text-sm text-gray-600 dark:text-slate-400">
+                            <a href="index.html" class="text-primary hover:text-primary/80 dark:text-blue-400">
+                                ← Back to Homepage
+                            </a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Security Notice -->
+            <div class="px-8 py-4 bg-gray-50 dark:bg-slate-800 border-t border-gray-200 dark:border-slate-700">
+                <div class="flex items-center justify-center text-sm text-gray-600 dark:text-slate-400">
+                    <span class="mr-2">🔒</span>
+                    Secured by Firebase Authentication
+                </div>
+            </div>
         </div>
     </div>
+</main>
+
+<footer class="mt-16 bg-secondary text-white text-center p-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-8 mb-8">
+            <div>
+                <h4 class="font-heading text-lg font-bold mb-4">Portal Access</h4>
+                <p class="text-sm text-white/90">
+                    Secure login for authorized youth members and administrators only.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-heading text-lg font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html" class="hover:text-white/80 transition-colors">Homepage</a></li>
+                    <li><a href="contact.html" class="hover:text-white/80 transition-colors">Contact Support</a></li>
+                    <li><a href="forgot-password.html" class="hover:text-white/80 transition-colors">Password Help</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-heading text-lg font-bold mb-4">Security</h4>
+                <p class="text-sm text-white/90">
+                    Your credentials are protected with industry-standard encryption.
+                </p>
+            </div>
+        </div>
+        
+        <div class="border-t border-white/30 pt-6">
+            <p class="text-lg font-semibold">&copy; 2026 New Testament Baptist Church (NTBC) Youth Ministry</p>
+            <p class="text-sm mt-2 text-white/80">Secure Access • Protected Data • Trusted Platform</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Dark Mode Toggle Script -->
+<script>
+    function toggleDark() {
+        document.documentElement.classList.toggle('dark');
+        const button = document.querySelector('button[onclick="toggleDark()"]');
+        if (document.documentElement.classList.contains('dark')) {
+            button.innerHTML = '☀️';
+            button.classList.remove('bg-white/20');
+            button.classList.add('bg-gray-700');
+        } else {
+            button.innerHTML = '🌙';
+            button.classList.remove('bg-gray-700');
+            button.classList.add('bg-white/20');
+        }
+    }
+</script>
+
+<!-- Password Toggle Script -->
+<script>
+    function togglePassword() {
+        const passwordInput = document.getElementById('password');
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+    }
+</script>
+
 </body>
 </html>
