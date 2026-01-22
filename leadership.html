@@ -1,41 +1,277 @@
-<h2>Youth Leadership & Executives</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leadership | NTBC Youth Ministry</title>
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-<p>
-  The NTBC Youth Ministry is led by dedicated and committed leaders who serve
-  under the authority of the church, providing guidance, organization, and
-  spiritual direction to the youth.
-</p>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Nunito+Sans:wght@600;700;800&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet">
 
-<p>
-  Our leaders are called to serve with humility, integrity, and faithfulness,
-  setting godly examples for others to follow.
-</p>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
 
-<blockquote>
-  “And whosoever will be chief among you, let him be your servant.”  
-  <br>— Matthew 20:27
-</blockquote>
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563EB',
+            secondary: '#059669',
+            accent: '#DC2626',
+            background: '#FAFBFC',
+            foreground: '#1F2937'
+          },
+          fontFamily: {
+            heading: ['Nunito Sans', 'sans-serif'],
+            body: ['Source Sans 3', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 dark:bg-slate-800 font-body">
 
-<h3>Youth Executive Positions</h3>
-<ul>
-  <li>Youth President</li>
-  <li>Vice President</li>
-  <li>Secretary</li>
-  <li>Assistant Secretary</li>
-  <li>Financial Secretary</li>
-  <li>Treasurer</li>
-  <li>Organizing Secretary</li>
-</ul>
+<header class="bg-gradient-to-r from-primary to-secondary text-white">
+  <div class="max-w-7xl mx-auto flex items-center gap-4 p-6">
+    <img src="images/ntbc-logo.png" class="w-16" alt="NTBC Logo">
 
-<p>
-  Names, roles, and photographs of executives will be added as they are appointed
-  or elected.
-</p>
+    <div>
+      <h1 class="font-heading text-2xl font-extrabold">
+        New Testament Baptist Church
+      </h1>
+      <p class="text-sm opacity-90">
+        Youth Ministry – Afrancho-Bronkong
+      </p>
+    </div>
 
-<h3>Leadership Responsibilities</h3>
-<ul>
-  <li>Spiritual guidance and mentorship</li>
-  <li>Planning and organizing youth programs</li>
-  <li>Promoting unity and discipline among members</li>
-  <li>Serving as role models in character and conduct</li>
-</ul>
+    <!-- Dark Mode Button -->
+    <button onclick="toggleDark()"
+      class="ml-auto bg-white/20 px-4 py-2 rounded-full text-sm font-semibold hover:bg-white/30 transition-colors">
+      🌙
+    </button>
+  </div>
+
+  <nav class="bg-black/20">
+    <div class="max-w-7xl mx-auto flex flex-wrap gap-6 px-6 py-3 font-semibold">
+      <a href="index.html" class="hover:text-white/80 transition-colors">Home</a>
+      <a href="about.html" class="hover:text-white/80 transition-colors">About</a>
+      <a href="programs.html" class="hover:text-white/80 transition-colors">Programs</a>
+      <a href="leadership.html" class="underline decoration-2 underline-offset-4 hover:text-white/80 transition-colors">Leadership</a>
+      <a href="finance.html" class="hover:text-white/80 transition-colors">Finance</a>
+      <a href="events.html" class="hover:text-white/80 transition-colors">Events</a>
+      <a href="contact.html" class="hover:text-white/80 transition-colors">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main class="max-w-7xl mx-auto bg-white dark:bg-slate-900 dark:text-slate-200 -mt-6 rounded-xl shadow-xl p-8">
+  <h1 class="font-heading text-4xl font-bold text-primary mb-2">Youth Leadership & Executives</h1>
+  <p class="text-lg text-gray-600 dark:text-slate-400 mb-8">
+    Dedicated Servants Leading by Example
+  </p>
+
+  <div class="mb-12">
+    <div class="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-2xl mb-8">
+      <p class="text-lg mb-6">
+        The NTBC Youth Ministry is led by dedicated and committed leaders who serve
+        under the authority of the church, providing guidance, organization, and
+        spiritual direction to the youth.
+      </p>
+      <p class="text-lg">
+        Our leaders are called to serve with humility, integrity, and faithfulness,
+        setting godly examples for others to follow.
+      </p>
+    </div>
+  </div>
+
+  <!-- Leadership Quote -->
+  <div class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-8 rounded-2xl mb-12 text-center">
+    <blockquote class="text-2xl italic">
+      "And whosoever will be chief among you, let him be your servant."  
+      <br><span class="text-lg not-italic mt-4 block font-semibold">— Matthew 20:27</span>
+    </blockquote>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-8 mb-12">
+    <!-- Executive Positions -->
+    <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-8 rounded-xl shadow-sm">
+      <div class="flex items-center mb-6">
+        <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center mr-4">
+          <span class="text-2xl">👥</span>
+        </div>
+        <h2 class="font-heading text-2xl font-bold text-indigo-600 dark:text-indigo-400">Youth Executive Positions</h2>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded-lg">
+          <h4 class="font-bold text-lg text-indigo-700 dark:text-indigo-300">Youth President</h4>
+          <p class="text-sm text-gray-600 dark:text-slate-400 mt-1">Overall leadership</p>
+        </div>
+        <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded-lg">
+          <h4 class="font-bold text-lg text-indigo-700 dark:text-indigo-300">Vice President</h4>
+          <p class="text-sm text-gray-600 dark:text-slate-400 mt-1">Assists President</p>
+        </div>
+        <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded-lg">
+          <h4 class="font-bold text-lg text-indigo-700 dark:text-indigo-300">Secretary</h4>
+          <p class="text-sm text-gray-600 dark:text-slate-400 mt-1">Records & communication</p>
+        </div>
+        <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded-lg">
+          <h4 class="font-bold text-lg text-indigo-700 dark:text-indigo-300">Assistant Secretary</h4>
+          <p class="text-sm text-gray-600 dark:text-slate-400 mt-1">Supports Secretary</p>
+        </div>
+        <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded-lg">
+          <h4 class="font-bold text-lg text-indigo-700 dark:text-indigo-300">Financial Secretary</h4>
+          <p class="text-sm text-gray-600 dark:text-slate-400 mt-1">Funds recording</p>
+        </div>
+        <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded-lg">
+          <h4 class="font-bold text-lg text-indigo-700 dark:text-indigo-300">Treasurer</h4>
+          <p class="text-sm text-gray-600 dark:text-slate-400 mt-1">Funds management</p>
+        </div>
+        <div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded-lg col-span-2">
+          <h4 class="font-bold text-lg text-indigo-700 dark:text-indigo-300">Organizing Secretary</h4>
+          <p class="text-sm text-gray-600 dark:text-slate-400 mt-1">Programs & events coordination</p>
+        </div>
+      </div>
+      <div class="mt-6 p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg">
+        <p class="text-sm">
+          Names, roles, and photographs of executives will be added as they are appointed
+          or elected.
+        </p>
+      </div>
+    </div>
+
+    <!-- Leadership Responsibilities -->
+    <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 p-8 rounded-xl shadow-sm">
+      <div class="flex items-center mb-6">
+        <div class="w-12 h-12 bg-amber-100 dark:bg-amber-900 rounded-lg flex items-center justify-center mr-4">
+          <span class="text-2xl">🎯</span>
+        </div>
+        <h2 class="font-heading text-2xl font-bold text-amber-600 dark:text-amber-400">Leadership Responsibilities</h2>
+      </div>
+      <ul class="space-y-4">
+        <li class="flex items-start p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg">
+          <span class="w-3 h-3 bg-amber-500 rounded-full mr-4 mt-2"></span>
+          <div>
+            <p class="font-semibold">Spiritual guidance and mentorship</p>
+            <p class="text-sm text-gray-600 dark:text-slate-400 mt-1">Providing biblical counsel and discipleship</p>
+          </div>
+        </li>
+        <li class="flex items-start p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg">
+          <span class="w-3 h-3 bg-amber-500 rounded-full mr-4 mt-2"></span>
+          <div>
+            <p class="font-semibold">Planning and organizing youth programs</p>
+            <p class="text-sm text-gray-600 dark:text-slate-400 mt-1">Coordinating activities and events</p>
+          </div>
+        </li>
+        <li class="flex items-start p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg">
+          <span class="w-3 h-3 bg-amber-500 rounded-full mr-4 mt-2"></span>
+          <div>
+            <p class="font-semibold">Promoting unity and discipline</p>
+            <p class="text-sm text-gray-600 dark:text-slate-400 mt-1">Fostering harmony among members</p>
+          </div>
+        </li>
+        <li class="flex items-start p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg">
+          <span class="w-3 h-3 bg-amber-500 rounded-full mr-4 mt-2"></span>
+          <div>
+            <p class="font-semibold">Serving as role models</p>
+            <p class="text-sm text-gray-600 dark:text-slate-400 mt-1">Exemplifying Christ-like character</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Leadership Qualities -->
+  <div class="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-2xl">
+    <h2 class="font-heading text-2xl font-bold text-primary mb-8 text-center">Qualities of Godly Leadership</h2>
+    <div class="grid md:grid-cols-4 gap-6">
+      <div class="text-center">
+        <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span class="text-2xl">❤️</span>
+        </div>
+        <h4 class="font-bold">Humility</h4>
+        <p class="text-sm mt-2">Serving, not being served</p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span class="text-2xl">📖</span>
+        </div>
+        <h4 class="font-bold">Integrity</h4>
+        <p class="text-sm mt-2">Consistent character</p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span class="text-2xl">🤝</span>
+        </div>
+        <h4 class="font-bold">Accountability</h4>
+        <p class="text-sm mt-2">Answerable to God and others</p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 bg-red-100 dark:bg-red-900 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span class="text-2xl">🙏</span>
+        </div>
+        <h4 class="font-bold">Prayerfulness</h4>
+        <p class="text-sm mt-2">Dependent on God</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="mt-16 bg-secondary text-white text-center p-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <h4 class="font-heading text-lg font-bold mb-4">Leadership Contact</h4>
+        <p class="text-sm text-white/90">
+          For leadership-related inquiries, please contact the Youth President or Secretary.
+        </p>
+      </div>
+      <div>
+        <h4 class="font-heading text-lg font-bold mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="programs.html" class="hover:text-white/80 transition-colors">Programs</a></li>
+          <li><a href="events.html" class="hover:text-white/80 transition-colors">Events</a></li>
+          <li><a href="contact.html" class="hover:text-white/80 transition-colors">Contact Leadership</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-heading text-lg font-bold mb-4">Leadership Development</h4>
+        <p class="text-sm text-white/90">
+          We are committed to raising the next generation of Christian leaders through training and mentorship.
+        </p>
+      </div>
+    </div>
+    
+    <div class="border-t border-white/30 pt-6">
+      <p class="text-lg font-semibold">&copy; 2026 New Testament Baptist Church (NTBC) Youth Ministry</p>
+      <p class="text-sm mt-2 text-white/80">Leading by Example • Serving with Love • Following Christ</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Dark Mode Toggle Script -->
+<script>
+  function toggleDark() {
+    document.documentElement.classList.toggle('dark');
+    const button = document.querySelector('button[onclick="toggleDark()"]');
+    if (document.documentElement.classList.contains('dark')) {
+      button.innerHTML = '☀️';
+      button.classList.remove('bg-white/20');
+      button.classList.add('bg-gray-700');
+    } else {
+      button.innerHTML = '🌙';
+      button.classList.remove('bg-gray-700');
+      button.classList.add('bg-white/20');
+    }
+  }
+</script>
+
+</body>
+</html>
